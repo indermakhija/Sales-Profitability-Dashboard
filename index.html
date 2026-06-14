@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0083)file:///C:/Users/Inderpal%20S%20Makhija/Downloads/Sales_Dashboard_Light%20(11).html -->
+<!-- saved from url=(0083)file:///C:/Users/Inderpal%20S%20Makhija/Downloads/Sales_Dashboard_Light%20(13).html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -67,6 +67,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
     <button class="nav-tab" onclick="showTab(&#39;geography&#39;)">Geography</button>
     <button class="nav-tab" onclick="showTab(&#39;trends&#39;)">Trends</button>
     <button class="nav-tab" onclick="showTab(&#39;skus&#39;)">Top SKUs</button>
+    <button class="nav-tab" onclick="showTab(&#39;productmix&#39;)">Product Mix</button>
     <button class="nav-tab" onclick="showTab(&#39;insights&#39;)">💡 Insights</button>
   </div>
   <div style="font-size:10px;color:var(--td)">Data: 3,250 rows · Updated 14 Jun 2026</div>
@@ -76,8 +77,8 @@ tr:hover td{background:rgba(255,255,255,.02)}
   <div class="filter-group">
     <span>FY:</span>
     <div class="pill" id="fy-pills">
-      <button class="pill-btn active" onclick="toggleFY(2023,this)">FY24</button>
-      <button class="pill-btn active" onclick="toggleFY(2024,this)">FY25</button>
+      <button class="pill-btn" onclick="toggleFY(2023,this)">FY24</button>
+      <button class="pill-btn" onclick="toggleFY(2024,this)">FY25</button>
       <button class="pill-btn active" onclick="toggleFY(2025,this)">FY26</button>
       <button class="pill-btn active" onclick="toggleFY(2026,this)">FY27 YTD</button>
     </div>
@@ -102,7 +103,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
       <option value="EBO">EBO</option>
     </select>
   </div>
-  <div style="margin-left:auto;font-size:10px;color:var(--td)" id="summary-line">Net: ₹75.10Cr | Gross: ₹89.43Cr | Returns: ₹14.33Cr | Qty: 2,172,036</div>
+  <div style="margin-left:auto;font-size:10px;color:var(--td)" id="summary-line">Net: ₹48.96Cr | Gross: ₹60.40Cr | Returns: ₹11.43Cr | Qty: 1,497,946</div>
 </div>
 
 <main>
@@ -112,18 +113,18 @@ tr:hover td{background:rgba(255,255,255,.02)}
   <div class="grid g5" id="kpi-cards">
     <div class="card card-sm">
       <div class="kpi-row"><div class="lbl">Gross Sales</div><span style="font-size:18px">💰</span></div>
-      <div class="big" style="color:#2563eb;font-size:22px;margin:4px 0">₹89.43Cr</div>
-      <div class="sub">Returns: ₹14.33Cr</div>
+      <div class="big" style="color:#2563eb;font-size:22px;margin:4px 0">₹60.40Cr</div>
+      <div class="sub">Returns: ₹11.43Cr</div>
     </div>
     <div class="card card-sm">
       <div class="kpi-row"><div class="lbl">Net Revenue</div><span style="font-size:18px">📈</span></div>
-      <div class="big" style="color:#059669;font-size:22px;margin:4px 0">₹75.10Cr</div>
-      <div class="sub">2,172,036 units sold</div>
+      <div class="big" style="color:#059669;font-size:22px;margin:4px 0">₹48.96Cr</div>
+      <div class="sub">1,497,946 units sold</div>
     </div>
     <div class="card card-sm">
       <div class="kpi-row"><div class="lbl">Return Rate</div><span style="font-size:18px">↩️</span></div>
-      <div class="big" style="color:#d97706;font-size:22px;margin:4px 0">16.0%</div>
-      <div class="sub">₹14.33Cr returned</div>
+      <div class="big" style="color:#d97706;font-size:22px;margin:4px 0">18.9%</div>
+      <div class="sub">₹11.43Cr returned</div>
     </div>
     <div class="card card-sm">
       <div class="kpi-row"><div class="lbl">FY26 vs FY25</div><span style="font-size:18px">📊</span></div>
@@ -135,32 +136,32 @@ tr:hover td{background:rgba(255,255,255,.02)}
       <div class="big" style="color:#8b5cf6;font-size:22px;margin:4px 0">₹8.81Cr</div>
       <div class="sub">Apr–Jun 2026</div>
     </div></div>
-  <div class="insight" id="insight-box">📌 <strong>FY26 Key Insights:</strong> PUMA leads at <strong>51%</strong> gross share (₹45.46Cr) · FCUK at <strong>41%</strong> (₹36.96Cr) · North zone dominates with <strong>₹24.6Cr (28%)</strong> of FY26 gross · Delhi NCR #1 state at <strong>₹10.1Cr</strong> · FCUK BATON is top SKU at <strong>₹2.48Cr FY26</strong> · Return rate: <strong>16.0%</strong> of gross</div>
+  <div class="insight" id="insight-box">📌 <strong>FY26 Key Insights:</strong> PUMA leads at <strong>55%</strong> gross share (₹32.96Cr) · FCUK at <strong>38%</strong> (₹22.85Cr) · North zone dominates with <strong>₹24.6Cr (41%)</strong> of FY26 gross · Delhi NCR #1 state at <strong>₹10.1Cr</strong> · FCUK BATON is top SKU at <strong>₹2.48Cr FY26</strong> · Return rate: <strong>18.9%</strong> of gross</div>
   <div class="grid g2">
-    <div class="card"><div class="lbl">Monthly Revenue Trend</div><canvas id="chart-monthly" height="515" style="box-sizing: border-box; display: block; height: 343px; width: 573px;" width="859"></canvas></div>
-    <div class="card"><div class="lbl">Brand Mix (selected FY)</div><canvas id="chart-brand-donut" height="859" style="box-sizing: border-box; display: block; height: 573px; width: 573px;" width="859"></canvas></div>
+    <div class="card"><div class="lbl">Monthly Revenue Trend</div><canvas id="chart-monthly" height="518" style="box-sizing: border-box; display: block; height: 384px; width: 640px;" width="864"></canvas></div>
+    <div class="card"><div class="lbl">Brand Mix (selected FY)</div><canvas id="chart-brand-donut" height="864" style="box-sizing: border-box; display: block; height: 640px; width: 640px;" width="864"></canvas></div>
   </div>
   <div class="grid g3">
-    <div class="card"><div class="lbl">Channel Split</div><canvas id="chart-channel" height="293" style="box-sizing: border-box; display: block; height: 195px; width: 366px;" width="550"></canvas></div>
+    <div class="card"><div class="lbl">Channel Split</div><canvas id="chart-channel" height="296" style="box-sizing: border-box; display: block; height: 219px; width: 411px;" width="556"></canvas></div>
     <div class="card"><div class="lbl">Zone Revenue</div><div id="zone-bars" class="bar-wrap">
     <div class="bar-col">
-      <div class="bar-val">₹39.26Cr</div>
+      <div class="bar-val">₹28.08Cr</div>
       <div class="bar-fill" style="background:#2563eb;height:72px;width:100%;border-radius:3px 3px 0 0"></div>
       <div class="bar-lbl">North</div>
     </div>
     <div class="bar-col">
-      <div class="bar-val">₹20.29Cr</div>
-      <div class="bar-fill" style="background:#059669;height:37.20705110077809px;width:100%;border-radius:3px 3px 0 0"></div>
+      <div class="bar-val">₹13.36Cr</div>
+      <div class="bar-fill" style="background:#059669;height:34.262713594775434px;width:100%;border-radius:3px 3px 0 0"></div>
       <div class="bar-lbl">South</div>
     </div>
     <div class="bar-col">
-      <div class="bar-val">₹10.58Cr</div>
-      <div class="bar-fill" style="background:#d97706;height:19.410945848570833px;width:100%;border-radius:3px 3px 0 0"></div>
+      <div class="bar-val">₹7.31Cr</div>
+      <div class="bar-fill" style="background:#d97706;height:18.743152938257925px;width:100%;border-radius:3px 3px 0 0"></div>
       <div class="bar-lbl">East</div>
     </div>
     <div class="bar-col">
-      <div class="bar-val">₹18.98Cr</div>
-      <div class="bar-fill" style="background:#ec4899;height:34.81524702822674px;width:100%;border-radius:3px 3px 0 0"></div>
+      <div class="bar-val">₹11.35Cr</div>
+      <div class="bar-fill" style="background:#ec4899;height:29.09512124815221px;width:100%;border-radius:3px 3px 0 0"></div>
       <div class="bar-lbl">West</div>
     </div></div></div>
     <div class="card"><div class="lbl">YoY Comparison</div><div id="yoy-table"><table style="font-size:11px"><thead><tr><th>FY</th><th>Gross</th><th>YoY</th></tr></thead><tbody><tr><td style="font-weight:700">FY25</td><td style="color:var(--ac);font-weight:700">₹25.84Cr</td>
@@ -175,14 +176,14 @@ tr:hover td{background:rgba(255,255,255,.02)}
   <div class="grid g4" id="brand-kpis">
     <div class="card card-sm" style="border-top:3px solid #059669">
       <div class="lbl" style="color:#059669">FC</div>
-      <div style="font-size:20px;font-weight:700;color:#059669;margin:4px 0">₹6.67Cr</div>
-      <div class="sub">124,677 units</div>
+      <div style="font-size:20px;font-weight:700;color:#059669;margin:4px 0">₹4.24Cr</div>
+      <div class="sub">75,133 units</div>
       <div class="sub" style="color:#059669;font-weight:700;margin-top:2px">FY26 +25% vs FY25</div>
     </div>
     <div class="card card-sm" style="border-top:3px solid #2563eb">
       <div class="lbl" style="color:#2563eb">FCUK</div>
-      <div style="font-size:20px;font-weight:700;color:#2563eb;margin:4px 0">₹36.96Cr</div>
-      <div class="sub">957,492 units</div>
+      <div style="font-size:20px;font-weight:700;color:#2563eb;margin:4px 0">₹22.85Cr</div>
+      <div class="sub">600,301 units</div>
       <div class="sub" style="color:#059669;font-weight:700;margin-top:2px">FY26 +60% vs FY25</div>
     </div>
     <div class="card card-sm" style="border-top:3px solid #d97706">
@@ -193,8 +194,8 @@ tr:hover td{background:rgba(255,255,255,.02)}
     </div>
     <div class="card card-sm" style="border-top:3px solid #dc2626">
       <div class="lbl" style="color:#dc2626">PUMA</div>
-      <div style="font-size:20px;font-weight:700;color:#dc2626;margin:4px 0">₹45.46Cr</div>
-      <div class="sub">1,083,239 units</div>
+      <div style="font-size:20px;font-weight:700;color:#dc2626;margin:4px 0">₹32.96Cr</div>
+      <div class="sub">815,884 units</div>
       <div class="sub" style="color:#059669;font-weight:700;margin-top:2px">FY26 +161% vs FY25</div>
     </div></div>
   <div class="grid g2">
@@ -230,6 +231,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <!-- GEOGRAPHY TAB -->
 <div id="tab-geography" class="tab-content">
+  <div class="card"><div class="lbl" style="margin-bottom:8px">State Revenue — Top 15 (Gross Sales)</div><canvas id="chart-state-rev" height="0" style="box-sizing: border-box; display: block; height: 0px; width: 0px;" width="0"></canvas></div>
   <div class="card"><div class="lbl" style="margin-bottom:8px">State Revenue Ranking</div><div id="state-ranking"><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
       <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">1</span>
       <span style="font-weight:600;flex:1;font-size:12px">Delhi NCR</span>
@@ -237,196 +239,196 @@ tr:hover td{background:rgba(255,255,255,.02)}
       <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
         <div style="width:100%;height:100%;background:var(--ac);border-radius:2px"></div>
       </div>
-      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹16.38Cr</span>
-      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">19.1%</span>
+      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹10.82Cr</span>
+      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">18.7%</span>
     </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
       <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">2</span>
       <span style="font-weight:600;flex:1;font-size:12px">Karnataka</span>
       <span class="badge" style="background:#05966918;color:#059669;font-size:8px">South</span>
       <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
-        <div style="width:64%;height:100%;background:var(--ac);border-radius:2px"></div>
+        <div style="width:61%;height:100%;background:var(--ac);border-radius:2px"></div>
       </div>
-      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹10.42Cr</span>
-      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">12.1%</span>
+      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹6.59Cr</span>
+      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">11.4%</span>
     </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
       <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">3</span>
       <span style="font-weight:600;flex:1;font-size:12px">Maharashtra</span>
       <span class="badge" style="background:#ec489918;color:#ec4899;font-size:8px">West</span>
       <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
-        <div style="width:54%;height:100%;background:var(--ac);border-radius:2px"></div>
+        <div style="width:57%;height:100%;background:var(--ac);border-radius:2px"></div>
       </div>
-      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹8.81Cr</span>
-      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">10.3%</span>
+      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹6.12Cr</span>
+      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">10.6%</span>
     </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
       <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">4</span>
-      <span style="font-weight:600;flex:1;font-size:12px">Gujarat</span>
-      <span class="badge" style="background:#ec489918;color:#ec4899;font-size:8px">West</span>
-      <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
-        <div style="width:42%;height:100%;background:var(--ac);border-radius:2px"></div>
-      </div>
-      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹6.85Cr</span>
-      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">8.0%</span>
-    </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
-      <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">5</span>
       <span style="font-weight:600;flex:1;font-size:12px">West Bengal</span>
       <span class="badge" style="background:#d9770618;color:#d97706;font-size:8px">East</span>
       <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
-        <div style="width:31%;height:100%;background:var(--ac);border-radius:2px"></div>
+        <div style="width:33%;height:100%;background:var(--ac);border-radius:2px"></div>
       </div>
-      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹5.08Cr</span>
-      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">5.9%</span>
+      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹3.56Cr</span>
+      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">6.2%</span>
     </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
-      <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">6</span>
+      <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">5</span>
       <span style="font-weight:600;flex:1;font-size:12px">Uttar Pradesh</span>
       <span class="badge" style="background:#2563eb18;color:#2563eb;font-size:8px">North</span>
       <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
-        <div style="width:29%;height:100%;background:var(--ac);border-radius:2px"></div>
+        <div style="width:32%;height:100%;background:var(--ac);border-radius:2px"></div>
       </div>
-      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹4.81Cr</span>
-      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">5.6%</span>
+      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹3.47Cr</span>
+      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">6.0%</span>
+    </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
+      <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">6</span>
+      <span style="font-weight:600;flex:1;font-size:12px">Gujarat</span>
+      <span class="badge" style="background:#ec489918;color:#ec4899;font-size:8px">West</span>
+      <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
+        <div style="width:32%;height:100%;background:var(--ac);border-radius:2px"></div>
+      </div>
+      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹3.45Cr</span>
+      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">6.0%</span>
     </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
       <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">7</span>
       <span style="font-weight:600;flex:1;font-size:12px">Punjab</span>
       <span class="badge" style="background:#2563eb18;color:#2563eb;font-size:8px">North</span>
       <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
-        <div style="width:29%;height:100%;background:var(--ac);border-radius:2px"></div>
+        <div style="width:28%;height:100%;background:var(--ac);border-radius:2px"></div>
       </div>
-      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹4.67Cr</span>
-      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">5.4%</span>
+      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹2.99Cr</span>
+      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">5.2%</span>
     </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
       <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">8</span>
-      <span style="font-weight:600;flex:1;font-size:12px">Western UP</span>
-      <span class="badge" style="background:#2563eb18;color:#2563eb;font-size:8px">North</span>
-      <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
-        <div style="width:22%;height:100%;background:var(--ac);border-radius:2px"></div>
-      </div>
-      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹3.64Cr</span>
-      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">4.2%</span>
-    </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
-      <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">9</span>
       <span style="font-weight:600;flex:1;font-size:12px">Haryana</span>
       <span class="badge" style="background:#2563eb18;color:#2563eb;font-size:8px">North</span>
       <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
-        <div style="width:22%;height:100%;background:var(--ac);border-radius:2px"></div>
+        <div style="width:27%;height:100%;background:var(--ac);border-radius:2px"></div>
       </div>
-      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹3.63Cr</span>
-      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">4.2%</span>
+      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹2.91Cr</span>
+      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">5.0%</span>
+    </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
+      <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">9</span>
+      <span style="font-weight:600;flex:1;font-size:12px">Western UP</span>
+      <span class="badge" style="background:#2563eb18;color:#2563eb;font-size:8px">North</span>
+      <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
+        <div style="width:26%;height:100%;background:var(--ac);border-radius:2px"></div>
+      </div>
+      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹2.81Cr</span>
+      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">4.9%</span>
     </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
       <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">10</span>
       <span style="font-weight:600;flex:1;font-size:12px">Rajasthan</span>
       <span class="badge" style="background:#2563eb18;color:#2563eb;font-size:8px">North</span>
       <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
-        <div style="width:19%;height:100%;background:var(--ac);border-radius:2px"></div>
+        <div style="width:25%;height:100%;background:var(--ac);border-radius:2px"></div>
       </div>
-      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹3.13Cr</span>
-      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">3.6%</span>
+      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹2.67Cr</span>
+      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">4.6%</span>
     </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
       <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">11</span>
       <span style="font-weight:600;flex:1;font-size:12px">Tamil Nadu</span>
       <span class="badge" style="background:#05966918;color:#059669;font-size:8px">South</span>
       <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
-        <div style="width:18%;height:100%;background:var(--ac);border-radius:2px"></div>
+        <div style="width:19%;height:100%;background:var(--ac);border-radius:2px"></div>
       </div>
-      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹2.87Cr</span>
-      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">3.3%</span>
+      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹2.08Cr</span>
+      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">3.6%</span>
     </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
       <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">12</span>
-      <span style="font-weight:600;flex:1;font-size:12px">Andhra Pradesh</span>
-      <span class="badge" style="background:#05966918;color:#059669;font-size:8px">South</span>
-      <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
-        <div style="width:17%;height:100%;background:var(--ac);border-radius:2px"></div>
-      </div>
-      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹2.77Cr</span>
-      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">3.2%</span>
-    </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
-      <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">13</span>
       <span style="font-weight:600;flex:1;font-size:12px">Odisha</span>
       <span class="badge" style="background:#d9770618;color:#d97706;font-size:8px">East</span>
       <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
-        <div style="width:16%;height:100%;background:var(--ac);border-radius:2px"></div>
+        <div style="width:18%;height:100%;background:var(--ac);border-radius:2px"></div>
       </div>
-      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹2.68Cr</span>
-      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">3.1%</span>
+      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹1.95Cr</span>
+      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">3.4%</span>
+    </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
+      <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">13</span>
+      <span style="font-weight:600;flex:1;font-size:12px">Andhra Pradesh</span>
+      <span class="badge" style="background:#05966918;color:#059669;font-size:8px">South</span>
+      <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
+        <div style="width:18%;height:100%;background:var(--ac);border-radius:2px"></div>
+      </div>
+      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹1.90Cr</span>
+      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">3.3%</span>
     </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
       <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">14</span>
-      <span style="font-weight:600;flex:1;font-size:12px">Mumbai+Sub</span>
-      <span class="badge" style="background:#ec489918;color:#ec4899;font-size:8px">West</span>
-      <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
-        <div style="width:13%;height:100%;background:var(--ac);border-radius:2px"></div>
-      </div>
-      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹2.20Cr</span>
-      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">2.6%</span>
-    </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
-      <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">15</span>
       <span style="font-weight:600;flex:1;font-size:12px">Telangana</span>
       <span class="badge" style="background:#05966918;color:#059669;font-size:8px">South</span>
       <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
-        <div style="width:13%;height:100%;background:var(--ac);border-radius:2px"></div>
+        <div style="width:12%;height:100%;background:var(--ac);border-radius:2px"></div>
       </div>
-      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹2.06Cr</span>
-      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">2.4%</span>
+      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹1.28Cr</span>
+      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">2.2%</span>
     </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
-      <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">16</span>
+      <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">15</span>
       <span style="font-weight:600;flex:1;font-size:12px">Kerala</span>
       <span class="badge" style="background:#05966918;color:#059669;font-size:8px">South</span>
       <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
-        <div style="width:9%;height:100%;background:var(--ac);border-radius:2px"></div>
+        <div style="width:10%;height:100%;background:var(--ac);border-radius:2px"></div>
       </div>
-      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹1.43Cr</span>
-      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">1.7%</span>
+      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹1.05Cr</span>
+      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">1.8%</span>
     </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
-      <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">17</span>
+      <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">16</span>
       <span style="font-weight:600;flex:1;font-size:12px">J&amp;K</span>
       <span class="badge" style="background:#2563eb18;color:#2563eb;font-size:8px">North</span>
       <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
-        <div style="width:8%;height:100%;background:var(--ac);border-radius:2px"></div>
+        <div style="width:9%;height:100%;background:var(--ac);border-radius:2px"></div>
       </div>
-      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹1.24Cr</span>
-      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">1.4%</span>
+      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹97.8L</span>
+      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">1.7%</span>
+    </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
+      <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">17</span>
+      <span style="font-weight:600;flex:1;font-size:12px">Mumbai+Sub</span>
+      <span class="badge" style="background:#ec489918;color:#ec4899;font-size:8px">West</span>
+      <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
+        <div style="width:9%;height:100%;background:var(--ac);border-radius:2px"></div>
+      </div>
+      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹95.4L</span>
+      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">1.6%</span>
     </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
       <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">18</span>
-      <span style="font-weight:600;flex:1;font-size:12px">Bihar</span>
-      <span class="badge" style="background:#d9770618;color:#d97706;font-size:8px">East</span>
-      <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
-        <div style="width:7%;height:100%;background:var(--ac);border-radius:2px"></div>
-      </div>
-      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹1.19Cr</span>
-      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">1.4%</span>
-    </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
-      <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">19</span>
       <span style="font-weight:600;flex:1;font-size:12px">Tricity -HR-HP</span>
       <span class="badge" style="background:#2563eb18;color:#2563eb;font-size:8px">North</span>
       <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
         <div style="width:7%;height:100%;background:var(--ac);border-radius:2px"></div>
       </div>
-      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹1.13Cr</span>
-      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">1.3%</span>
+      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹80.9L</span>
+      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">1.4%</span>
     </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
-      <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">20</span>
-      <span style="font-weight:600;flex:1;font-size:12px">Jharkhand</span>
+      <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">19</span>
+      <span style="font-weight:600;flex:1;font-size:12px">Bihar</span>
       <span class="badge" style="background:#d9770618;color:#d97706;font-size:8px">East</span>
       <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
-        <div style="width:5%;height:100%;background:var(--ac);border-radius:2px"></div>
+        <div style="width:7%;height:100%;background:var(--ac);border-radius:2px"></div>
       </div>
-      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹86.5L</span>
-      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">1.0%</span>
+      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹80.0L</span>
+      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">1.4%</span>
+    </div><div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(31,37,55,.4)">
+      <span style="font-size:10px;color:var(--td);width:18;flex-shrink:0">20</span>
+      <span style="font-weight:600;flex:1;font-size:12px">Madhya Pradesh</span>
+      <span class="badge" style="background:#ec489918;color:#ec4899;font-size:8px">West</span>
+      <div style="width:120px;height:4px;border-radius:2px;background:var(--bd)">
+        <div style="width:7%;height:100%;background:var(--ac);border-radius:2px"></div>
+      </div>
+      <span style="font-weight:700;color:var(--ac);min-width:60px;text-align:right;font-size:11px">₹72.9L</span>
+      <span style="font-size:9px;color:var(--td);min-width:30px;text-align:right">1.3%</span>
     </div></div></div>
   <div class="card"><div class="lbl">Zone Performance</div><div id="zone-detail" class="grid g4" style="margin-top:10px"><div class="card card-sm" style="border-top:3px solid #2563eb">
       <div class="lbl" style="color:#2563eb">North Zone</div>
-      <div style="font-size:20px;font-weight:700;color:#2563eb;margin:4px 0">₹39.26Cr</div>
-      <div class="sub">877,676 units</div>
+      <div style="font-size:20px;font-weight:700;color:#2563eb;margin:4px 0">₹28.08Cr</div>
+      <div class="sub">634,261 units</div>
     </div><div class="card card-sm" style="border-top:3px solid #059669">
       <div class="lbl" style="color:#059669">South Zone</div>
-      <div style="font-size:20px;font-weight:700;color:#059669;margin:4px 0">₹20.29Cr</div>
-      <div class="sub">559,413 units</div>
+      <div style="font-size:20px;font-weight:700;color:#059669;margin:4px 0">₹13.36Cr</div>
+      <div class="sub">395,474 units</div>
     </div><div class="card card-sm" style="border-top:3px solid #d97706">
       <div class="lbl" style="color:#d97706">East Zone</div>
-      <div style="font-size:20px;font-weight:700;color:#d97706;margin:4px 0">₹10.58Cr</div>
-      <div class="sub">270,163 units</div>
+      <div style="font-size:20px;font-weight:700;color:#d97706;margin:4px 0">₹7.31Cr</div>
+      <div class="sub">181,614 units</div>
     </div><div class="card card-sm" style="border-top:3px solid #ec4899">
       <div class="lbl" style="color:#ec4899">West Zone</div>
-      <div style="font-size:20px;font-weight:700;color:#ec4899;margin:4px 0">₹18.98Cr</div>
-      <div class="sub">458,543 units</div>
+      <div style="font-size:20px;font-weight:700;color:#ec4899;margin:4px 0">₹11.35Cr</div>
+      <div class="sub">280,356 units</div>
     </div></div></div>
 </div>
 
@@ -587,12 +589,643 @@ tr:hover td{background:rgba(255,255,255,.02)}
     </tr></tbody></table></div></div>
 </div>
 
+<!-- PRODUCT MIX TAB -->
+<div id="tab-productmix" class="tab-content">
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:4px">
+    <div>
+      <div style="font-size:17px;font-weight:700;color:var(--tx);font-family:serif">Product Mix Analysis</div>
+      <div style="font-size:10px;color:var(--td)" id="pm-subtitle">Size run view · FY26, FY27 YTD gross sales · 37 items</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <span style="font-size:10px;color:var(--ts);font-weight:600;text-transform:uppercase;letter-spacing:.7px">View:</span>
+      <div class="pill" id="dim-pills">
+        <button class="pill-btn" onclick="setDim(&#39;brick&#39;,this)">Brick / Category</button>
+        <button class="pill-btn" onclick="setDim(&#39;sku&#39;,this)">SKU / Article</button>
+        <button class="pill-btn" onclick="setDim(&#39;coll&#39;,this)">Collection</button>
+        <button class="pill-btn active" onclick="setDim(&#39;size&#39;,this)">Size</button>
+      </div>
+    </div>
+  </div>
+  <div class="card" style="padding:12px 16px">
+    <canvas id="chart-pm" height="1418" style="box-sizing: border-box; display: block; height: 1050px; width: 1050px;" width="1417"></canvas>
+  </div>
+  <div class="card" style="padding:0">
+    <div class="overflow-x">
+    <table id="pm-table" style="width:100%;border-collapse:collapse;font-size:11px">
+      <thead><tr style="background:var(--bg)">
+        <th style="padding:9px 10px;text-align:left;color:var(--ts);font-size:9px;text-transform:uppercase;letter-spacing:.8px;border-bottom:1px solid var(--bd);width:32px">#</th>
+        <th style="padding:9px 10px;text-align:left;color:var(--ts);font-size:9px;text-transform:uppercase;letter-spacing:.8px;border-bottom:1px solid var(--bd)">Name</th>
+        <th style="padding:9px 10px;text-align:right;color:var(--ts);font-size:9px;text-transform:uppercase;letter-spacing:.8px;border-bottom:1px solid var(--bd)">Revenue</th>
+        <th style="padding:9px 10px;text-align:right;color:var(--ts);font-size:9px;text-transform:uppercase;letter-spacing:.8px;border-bottom:1px solid var(--bd)">Prior FY</th>
+        <th style="padding:9px 10px;text-align:right;color:var(--ts);font-size:9px;text-transform:uppercase;letter-spacing:.8px;border-bottom:1px solid var(--bd)">YoY</th>
+        <th style="padding:9px 10px;text-align:right;color:var(--ts);font-size:9px;text-transform:uppercase;letter-spacing:.8px;border-bottom:1px solid var(--bd)">Qty Sold</th>
+        <th style="padding:9px 10px;text-align:right;color:var(--ts);font-size:9px;text-transform:uppercase;letter-spacing:.8px;border-bottom:1px solid var(--bd)">Avg Rate</th>
+        <th style="padding:9px 10px;text-align:left;color:var(--ts);font-size:9px;text-transform:uppercase;letter-spacing:.8px;border-bottom:1px solid var(--bd);min-width:100px">Share</th>
+      </tr></thead>
+      <tbody id="pm-table-body"><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">1</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">L</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹17.49Cr</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹15.14Cr</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:#16a34a">+16%</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">3,89,613</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹449</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:100%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">29.0%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">2</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">M</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹17.11Cr</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹14.76Cr</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:#16a34a">+16%</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">3,84,992</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹444</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:100%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">28.3%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">3</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">XL</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹9.18Cr</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹7.88Cr</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:#16a34a">+16%</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">2,00,466</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹458</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:75.99632797419765%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">15.2%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">4</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">S</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹5.82Cr</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹4.99Cr</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:#16a34a">+17%</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">1,38,234</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹421</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:48.1727487264472%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">9.6%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">5</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">37/40</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹5.40Cr</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹4.25Cr</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:#059669">+27%</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">1,97,066</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹274</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:44.70095936933315%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">8.9%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">6</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">FS</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹2.12Cr</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹1.95Cr</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:#16a34a">+9%</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">1,05,186</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹201</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:17.509840195753426%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">3.5%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">7</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">XXL</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹1.91Cr</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹1.65Cr</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:#16a34a">+16%</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">43,059</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹444</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:15.842475256775508%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">3.2%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">8</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">23CM</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹48.0L</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹46.3L</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:#16a34a">+4%</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">12,957</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹371</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:3.9749368210471223%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.8%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">9</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">23 cm (39/42)</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹24.7L</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹22.8L</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:#16a34a">+8%</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">7,114</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹348</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:2.046629554721829%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.4%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">10</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">22CM</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹13.8L</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹11.8L</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:#16a34a">+17%</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">4,328</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹319</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:1.1415588354611268%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.2%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">11</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">25CM</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹8.2L</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹8.0L</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:#16a34a">+2%</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">5,792</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹141</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.6772640963675923%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.1%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">12</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">26CM</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹6.7L</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹6.6L</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:#16a34a">+0%</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">1,864</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹357</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.5506725759078581%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.1%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">13</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">4-5Y/110CM</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹3.6L</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹0</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:var(--td)">—</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">709</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹501</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.29392322687664096%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.1%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">14</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">0_3M</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹3.4L</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹78.2K</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:#059669">+340%</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">534</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹645</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.28499421125609226%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.1%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">15</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">3-4Y/104CM</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹3.2L</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹0</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:var(--td)">—</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">659</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹491</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.2676866895076394%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.1%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">16</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">2-3Y/98CM</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹3.2L</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹0</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:var(--td)">—</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">646</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹495</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.2645657559929473%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.1%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">17</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">5-6Y/116CM</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹3.1L</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹0</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:var(--td)">—</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">600</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹509</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.2526093520797649%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.1%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">18</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">9-12M/80CM</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹2.7L</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹0</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:var(--td)">—</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">517</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹515</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.22051257907402455%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.0%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">19</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">12-18M/86CM</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹2.3L</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹0</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:var(--td)">—</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">447</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹509</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.1885250801329896%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.0%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">20</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">6-9M/74CM</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹2.2L</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹0</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:var(--td)">—</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">423</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹528</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.18476505890653566%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.0%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">21</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">18-24M/92CM</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹2.2L</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹0</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:var(--td)">—</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">416</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹533</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.1836847357668345%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.0%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">22</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">4-5Y</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹1.6L</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹0</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:var(--td)">—</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">317</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹508</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.13329283526117508%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.0%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">23</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">3-4Y</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹1.6L</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹0</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:var(--td)">—</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">322</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹496</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.13223817497000326%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.0%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">24</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">5-6Y</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹1.5L</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹0</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:var(--td)">—</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">322</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹471</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.12561053737885614%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.0%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">25</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">2-3Y</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹1.5L</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹0</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:var(--td)">—</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">307</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹487</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.12373714943621733%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.0%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">26</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">XS</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹1.2L</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹97.8K</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:#16a34a">+19%</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">338</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹344</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.0961868397892804%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.0%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">27</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">6_9M/74CM</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹74.9K</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹0</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:var(--td)">—</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">153</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹490</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.06203289973207854%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.0%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">28</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">3_6M/68CM</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹60.8K</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹0</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:var(--td)">—</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">108</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹563</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.05035795931889489%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.0%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">29</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">0_3M/62CM</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹40.1K</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹0</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:var(--td)">—</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">79</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹508</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.03323338884544122%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.0%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">30</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">24 CM</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹24.0K</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹23.2K</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:#16a34a">+4%</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">65</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹370</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.019895330280794345%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.0%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">31</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">6-9M</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹18.3K</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹0</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:var(--td)">—</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">32</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹573</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.015178333154344623%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.0%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">32</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">9-12M</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹16.5K</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹0</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:var(--td)">—</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">28</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹589</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.013655946752880769%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.0%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">33</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">39/42</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹7.4K</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹5.2K</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:#059669">+44%</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">68</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹109</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.0061317651308552285%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.0%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">34</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">43/46</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹6.9K</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹5.3K</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:#059669">+30%</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">66</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹104</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.005689701869092479%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.0%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">35</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">3_6M</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹4.8K</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹0</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:var(--td)">—</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">8</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹602</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.003989331195570588%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.0%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">36</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">9_12M/80CM</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹602</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹0</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:var(--td)">—</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">1</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹602</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.0004983559617625014%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.0%</span>
+          </div>
+        </td>
+      </tr><tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">37</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">30 x 18 x 53</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹111</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹111</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:#16a34a">+0%</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">110</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹1</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:0.00009188955441135823%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">0.0%</span>
+          </div>
+        </td>
+      </tr></tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
 <!-- INSIGHTS TAB -->
 <div id="tab-insights" class="tab-content">
   <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:14px">
     <div>
       <div style="font-size:17px;font-weight:700;color:var(--tx);font-family:serif">Business Insights</div>
-      <div style="font-size:10px;color:var(--td)" id="insights-period-label">Select a time window to compute insights</div>
+      <div style="font-size:10px;color:var(--td)" id="insights-period-label">Apr–Jun 2026 vs prior period Jan–Mar 2026</div>
     </div>
     <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
       <span style="font-size:10px;color:var(--ts);font-weight:600;letter-spacing:.7px;text-transform:uppercase">Rolling Period:</span>
@@ -605,8 +1238,71 @@ tr:hover td{background:rgba(255,255,255,.02)}
     </div>
   </div>
   <div id="insights-grid" style="display:flex;flex-direction:column;gap:10px">
-    <div class="card" style="text-align:center;color:var(--ts);padding:40px;font-size:12px">⚡ Click a period above to load insights…</div>
-  </div>
+    <div class="card" style="border-left:3px solid #dc2626;padding:16px 18px;display:flex;flex-direction:column;gap:0">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px">
+        <div style="display:flex;align-items:flex-start;gap:10px;min-width:0">
+          <span style="font-size:22px;flex-shrink:0;line-height:1.3">📉</span>
+          <div style="min-width:0">
+            <div style="font-size:9px;color:var(--ts);font-weight:700;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:3px">Insight 1 &nbsp;·&nbsp; Revenue Momentum</div>
+            <div style="font-size:15px;font-weight:700;color:var(--tx);line-height:1.4">Net revenue declined -43% vs prior 3-month period</div>
+          </div>
+        </div>
+        <div style="flex-shrink:0;padding:5px 13px;border-radius:14px;background:#dc262618;color:#dc2626;font-size:12px;font-weight:700;white-space:nowrap;margin-top:2px">-43%</div>
+      </div>
+      <div style="font-size:10px;color:var(--td);line-height:1.75;border-top:1px solid var(--bd);padding-top:9px"><strong>Apr–Jun 2026:</strong> Net ₹₹6.28Cr &nbsp;·&nbsp; Gross ₹₹8.81Cr &nbsp;·&nbsp; Returns ₹₹2.53Cr<br><strong>Jan–Mar 2026:</strong> Net ₹₹11.02Cr &nbsp;·&nbsp; Gross ₹₹12.67Cr &nbsp;·&nbsp; Returns ₹₹1.65Cr</div>
+    </div>
+    <div class="card" style="border-left:3px solid #2563eb;padding:16px 18px;display:flex;flex-direction:column;gap:0">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px">
+        <div style="display:flex;align-items:flex-start;gap:10px;min-width:0">
+          <span style="font-size:22px;flex-shrink:0;line-height:1.3">🏆</span>
+          <div style="min-width:0">
+            <div style="font-size:9px;color:var(--ts);font-weight:700;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:3px">Insight 2 &nbsp;·&nbsp; Brand Battleground</div>
+            <div style="font-size:15px;font-weight:700;color:var(--tx);line-height:1.4">MILOU grows fastest at +4178% · FC gaining share</div>
+          </div>
+        </div>
+        <div style="flex-shrink:0;padding:5px 13px;border-radius:14px;background:#2563eb18;color:#2563eb;font-size:12px;font-weight:700;white-space:nowrap;margin-top:2px">MILOU ↑</div>
+      </div>
+      <div style="font-size:10px;color:var(--td);line-height:1.75;border-top:1px solid var(--bd);padding-top:9px"><strong>FC</strong>: ₹1.38Cr &nbsp;(16% mix, +547% vs prior) &nbsp;·&nbsp; <strong>FCUK</strong>: ₹2.44Cr &nbsp;(28% mix, -49% vs prior) &nbsp;·&nbsp; <strong>MILOU</strong>: ₹33.5L &nbsp;(4% mix, +4178% vs prior) &nbsp;·&nbsp; <strong>PUMA</strong>: ₹4.66Cr &nbsp;(53% mix, -40% vs prior)</div>
+    </div>
+    <div class="card" style="border-left:3px solid #8b5cf6;padding:16px 18px;display:flex;flex-direction:column;gap:0">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px">
+        <div style="display:flex;align-items:flex-start;gap:10px;min-width:0">
+          <span style="font-size:22px;flex-shrink:0;line-height:1.3">🔄</span>
+          <div style="min-width:0">
+            <div style="font-size:9px;color:var(--ts);font-weight:700;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:3px">Insight 3 &nbsp;·&nbsp; Channel Mix Shift</div>
+            <div style="font-size:15px;font-weight:700;color:var(--tx);line-height:1.4">ECOM 32% of gross (+0.5pp) · GT 47% · LFS 17%</div>
+          </div>
+        </div>
+        <div style="flex-shrink:0;padding:5px 13px;border-radius:14px;background:#8b5cf618;color:#8b5cf6;font-size:12px;font-weight:700;white-space:nowrap;margin-top:2px">ECOM +0.5pp</div>
+      </div>
+      <div style="font-size:10px;color:var(--td);line-height:1.75;border-top:1px solid var(--bd);padding-top:9px"><strong>CFA</strong>: ₹31.0L &nbsp;(4% now vs 0% prior) &nbsp;·&nbsp; <strong>ECOM</strong>: ₹2.85Cr &nbsp;(32% now vs 32% prior) &nbsp;·&nbsp; <strong>GT</strong>: ₹4.16Cr &nbsp;(47% now vs 62% prior) &nbsp;·&nbsp; <strong>LFS</strong>: ₹1.49Cr &nbsp;(17% now vs 7% prior)</div>
+    </div>
+    <div class="card" style="border-left:3px solid #059669;padding:16px 18px;display:flex;flex-direction:column;gap:0">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px">
+        <div style="display:flex;align-items:flex-start;gap:10px;min-width:0">
+          <span style="font-size:22px;flex-shrink:0;line-height:1.3">🗺️</span>
+          <div style="min-width:0">
+            <div style="font-size:9px;color:var(--ts);font-weight:700;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:3px">Insight 4 &nbsp;·&nbsp; Geographic Spotlight</div>
+            <div style="font-size:15px;font-weight:700;color:var(--tx);line-height:1.4">South zone fastest growing +3% · North leads by volume (₹3.47Cr)</div>
+          </div>
+        </div>
+        <div style="flex-shrink:0;padding:5px 13px;border-radius:14px;background:#05966918;color:#059669;font-size:12px;font-weight:700;white-space:nowrap;margin-top:2px">South ↑</div>
+      </div>
+      <div style="font-size:10px;color:var(--td);line-height:1.75;border-top:1px solid var(--bd);padding-top:9px"><strong>North</strong>: ₹3.47Cr (-47%) &nbsp;·&nbsp; <strong>West</strong>: ₹1.76Cr (-9%) &nbsp;·&nbsp; <strong>South</strong>: ₹2.49Cr (+3%) &nbsp;·&nbsp; <strong>East</strong>: ₹77.5L (-57%) &nbsp;·&nbsp; <strong>Other</strong>: ₹31.0L<br>Top states this period: Karnataka ₹1.79Cr, Maharashtra ₹82.6L, Haryana ₹74.5L</div>
+    </div>
+    <div class="card" style="border-left:3px solid #dc2626;padding:16px 18px;display:flex;flex-direction:column;gap:0">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px">
+        <div style="display:flex;align-items:flex-start;gap:10px;min-width:0">
+          <span style="font-size:22px;flex-shrink:0;line-height:1.3">🚨</span>
+          <div style="min-width:0">
+            <div style="font-size:9px;color:var(--ts);font-weight:700;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:3px">Insight 5 &nbsp;·&nbsp; Return Rate Health</div>
+            <div style="font-size:15px;font-weight:700;color:var(--tx);line-height:1.4">Return rate 28.7% of gross — worsened 15.7pp vs prior</div>
+          </div>
+        </div>
+        <div style="flex-shrink:0;padding:5px 13px;border-radius:14px;background:#dc262618;color:#dc2626;font-size:12px;font-weight:700;white-space:nowrap;margin-top:2px">28.7%</div>
+      </div>
+      <div style="font-size:10px;color:var(--td);line-height:1.75;border-top:1px solid var(--bd);padding-top:9px">Returns ₹₹2.53Cr of ₹₹8.81Cr gross this period &nbsp;·&nbsp; Prior rate: 13.0%<br>By brand: FCUK 34.6% · PUMA 30.3% · MILOU 17.6% · FC 15.4%</div>
+    </div></div>
 </div>
 
 </main>
@@ -639,6 +1335,14 @@ const ZONE_MAP_RAW = {
 function ZONE_MAP(s){ return ZONE_MAP_RAW[s]||'Other'; }
 
 let selectedFYs = [2025];
+const DESCS=["67460002","67460010-1","67460011","67460101-1","67460102-1","67460106-1","67460111-1","67460112-1","67460113-1","67651501 Men Premium Soft touch tank","67651502 Men Premium Soft touch tank","67651503 TANK TOP","67651601 Mens Slub Tank PK2","67651601 TANK TOP","67651602 Men slub tank - Pack of 2","67651602 TANK TOP","67651701 Contrast Tank Top Men -Pk 2","67651701 TANK TOP","67651702 Contrast Tank Top Men -Pk 2","67651702 TANK TOP","68634101","68634102","68634103","68634201","68634202","68634301","68634302","68634303","68634304","68634305","68634306","68634307","68634701","68634702","68634703","68634704","68634705","68634706","68634708","68790401","68790402","68790403","68790404","68790701","68790702","68790703","68802401","68802402","68841101","68841102","68841103","68841201","68841202","68841203","68841301","68841302","68841303","68841801","68841802","68841901","68841902","68842001","68842101","68842102","68842201","68842202","68842401","68842402","68842403","68842404","68865701","68865702","68865801","68865802","68865901","68865902","68865903","68865904","68866001","68866002","9179802","9254902","ACTON","ANERLEY","ANKLE LENGTH HALF TERRY 3P Celandine-PUM","ANKLE LENGTH HALF TERRY 3P PUMA Black-Ch","ANKLE SOCKS","ARCHWAY-B","ARCHWAY-T","Ankle Length half terry 6P","BABY-BOY-SHORTS","BABY-GIRL-DRESS","BALHAM","BAND COLLAR \nSHIRTS","BARNES","BARNHILL","BARNSLEY","BARON","BASIC SL VEST","BASIC WOVEN BOXER","BATON","BBANSET023","BBASICTEE001","BBASICTEE002","BBNCSET026","BBNCSET027","BB_D0108 C3","BB_D0108 C4","BECKTON","BELFAST","BELMONT","BERKSHIRE","BEXLEY","BGNCST022","BGVGST021","BG_D0003 C2","BG_D0011 C1","BG_D0012 C1","BG_D0012 C3","BG_D0012 C9","BG_D0014 C1","BG_D0014 C2","BG_D0014 C8","BG_D0032","BLACKFEN-JP","BLANC-B","BLANC-P","BODYSUIT","BOXER","BRADFORD L","BRADFORD T","BREWER","BRIEF","BRISTOL","BRIXTON-B","BRIXTON-T","BROMTON","BRUCE","BRUSSEL","Basic Crew Vest-Pk","Basic V-neck-Pk of 2","Basic Woven Boxer IN-Pk of 1 American Be","Basic Woven Boxer IN-Pk of 1 Teal Green","Basic Woven Boxer WB-Pk of 1 PUMA","Brief","CAMDEN","CARGO PANT","CHAMBORD","CHARLTON","CHARRON","CHELSEA","CLAPHAM","CLYDE","CORBY","CRAYFORD","CROP TOP","CROXLEY","Contrast Tank Top Men -Pk 2","Crew Neck Tee set -Pk of 2","DALSTON","DAX","DERRICK","DINEN","DOVER-B","DOVER-T","DRESS","DURANCE","FINSBUSRY","GALDHAWK-B","GALDHAWK-T","GIFT PACK","GREENWICH","GUSTON-B","GUSTON-T","HACKNEY","HAMPTON","HARROW","HERITAGE FOOTIES 3P UNISEX","HILSTON","HOLBORN","HOLBORN FC","HOMEWEAR- T-SHIRT AND PAJAMA - SET","HOMEWEAR- T-SHIRT AND SHORTS - SET","HS T-SHIRT","Heritage Stripe short crew 3P PUMA White","JABLA","JAVELIN","JOGGERS","KENLEY","KENTON","KIDS-BOY-SHIRT","KIDS-BOY-T-SHIRT","KNIT PANTS","LEERS","LEGGINGS","LEITH","LEWES","LEYTON","LEZ","LIFESTYLE SNEAKER 3P","LOOSE FIT PANT","LS T-SHIRT","LYON","Lounge pants","MADDOX","MERSEY","MERSEY-B","MERSEY-T","MERTON","MOORGATE","MULTI-SPORT QTR 2P UNISEX Medium Gray He","MULTI-SPORT QTR 2P UNISEX PUMA Navy-Stro","Men Long sleeve Thermal top","Men Premium Soft touch tank","Men slub tank - Pack of 2","Mens Slub Tank PK2","Multi Sport  QUARTER 2P UNISEX","NEWBOLD","NEWBURY","NEWHAM","NORD","NORTHOLT","NORWOOD-B","NORWOOD-T","OVAL","OXFORD","PANT","PANTS","PARACHUTE PANT","PARKROYAL-B","PARKROYAL-T","PERFORMANCE TRAIN QUARTER 2P","POLO T-SHIRT","PRESTON","PRESTON-3S","PUMA ANKLE LENGTH HALF TERRY 3P","PUMA BASIC FOOTIE PLAIN 3P","PUMA CREW SOCKS 3P","PUMA CUSHIONED QUARTER 2P UNISEX","PUMA FOOTIE 2P UNISEX","PUMA FOOTIE 3P","PUMA FOOTIE 3P UNISEX","PUMA GRAPHIC SNEAKER 2P","PUMA GRAPHIC SNEAKER 2P-KIDS","PUMA GRAPHIC SNEAKER 3P","PUMA LIFESTYLE QUARTER 3P","PUMA LIFESTYLE SNEAKERS 3P Lime Green-PU","PUMA LOGO CUSHIONED QUARTER 2P","PUMA Lifestyle Unisex Quarter Socks Pack of 3","PUMA PERFORMANCE TRAIN LIGHT SNEAKER 2P","PUMA SNEAKER 3P UNISEX PUMA Black-PUMA R","PUMA SNEAKER PLAIN 3P","PUMA SPORT QUARTER 3P","PUMA SPORT QUARTER 3P Medium Gray Heathe","PUMA TEXTURED SNEAKER 1P","PUMA UNISEX LIFESTYLE QUARTERS 3P","PUMA UNISEX QUARTER PLAIN 3P","PURLEY","PUTNEY","Puma Bamboo AOP Brief WB Blue Coral-PUMA","Puma Bamboo AOP Brief WB PUMA Black-Glac","Puma Bamboo AOP Brief WB Varsity Green-G","Puma Bamboo AOP Trunk WB Blue Coral-PUMA","Puma Bamboo AOP Trunk WB PUMA Black-Glac","Puma Bamboo AOP Trunk WB Varsity Green-G","Puma Bamboo Brief WB Blue Coral-PUMA Whi","Puma Bamboo Brief WB New Navy-Glacial Gr","Puma Bamboo Brief WB PUMA Olive-PUMA Bla","Puma Bamboo Brief WB Warm Chestnut-PUMA","Puma Bamboo Trunk WB Blue Coral-PUMA Whi","Puma Bamboo Trunk WB New Navy-Glacial Gr","Puma Bamboo Trunk WB PUMA Olive-PUMA Bla","Puma Comfort weave AOP","Puma Cushion","Puma Cushioned Sneaker 2P U PUMA Black-P","Puma Footie 2P Unisex Burnt Red-Lake Blu","Puma Footie 2P Unisex Medium Gray Heathe","Puma Lite AOP Brief WB Strong Gray-Grano","Puma Lite AOP Trunk WB","Puma Lite Trunk WB","Puma Maximal Sneaker 2P PUMA Black-Eveni","Puma Nyl Brief WB AOP Chocolate-PUMA Whi","Puma Nyl Brief WB AOP Deep Teal-Zinfande","Puma Nyl Brief WB AOP Shadow Gray-PUMA B","Puma Nyl Brief WB AOP Vineyard Wine-Fudg","Puma Nyl Brief WB Dark Chocolate-PUMA Wh","Puma Nyl Brief WB PUMA Olive-PUMA Black","Puma Nyl Trunk WB","Puma Puzzle 2P Blue Turquoise","Puma Sport Socks 3P","Puma Supima Brief WB Dark Olive","Puma Supima Brief WB PUMA Black","Puma Supima Trunk WB New Navy-Glacial Gr","Puma Thermal LS Women Charcoal Gray","Puma Thermal LS Women Peach Fizz","Puma Thermal Womens pant Charcoal Gray","Puma Thermal Womens pant PUMA Black","Puma Thermal Womens pant Peach Fizz","Puma Thermoshield Long Sleeve Men Charco","Puma Unisex Quarter Plain 6P Glacial Gra","Puma Unisex Quarter Plain 6P PUMA Black-","Puma Unisex Sneaker Socks 6P Glacial Gra","Puma Unisex Sneaker Socks 6P Mustard See","QUARTER 1P UNISEX","REDBRIDGE","REGULAR COLLAR \nSHIRTS","REGULAR QUARTER 1P","REGULAR SHORTS","RHONE","RICHMOND","ROMPER","ROMPER WITH BIB","ROVE","SALFORD","SH-CU001","SH-CU002","SH-CU004","SH-CU005","SH-CU006","SH-CU007","SH-CU008","SHIRT","SHORTS","SIENE","SKIRT","SOHO","SOUTHHALL","SPORT QUARTER 1P","SPORT QUARTER 3P","STOKE","STRETCH BRIEF AOP","STRETCH BRIEF CAMO","STRETCH BRIEF SOLID","STRETCH TRUNK AOP","STRETCH TRUNK CAMO","STRETCH TRUNK SOLID","Stretch Crew Vest Pk of 2","Stretch SL vest-Pk of 2","T-SHIRT","T-SHIRT AND SHORTS CO -ORD SET","TANK TOP","TANK TOP TANK TOP","TBANSHT020","TBANSHT048","TBANSHT050","TBNCSH045","TBNCSHT015","TBNCSHT016","TBNCSHT019","TBNCSHT049","TBNCTEE001","TBNCTEE002","TBNCTEE004","TBNCTEE005","TBNCTEE009","TBNCTEE010","TBNCTEE011","TBVGSH043","TBVGSH046","TBVGSHT018","TBVGTEE013","TBVGTEE014","TEE PACK","TGANTP058","TGVGLG054","TGVGLG055","TGVGSH048","TGVGSH049","TGVGSH051","TGVGTS035","TGVGTS038","TGVGTS039","TGVGTS044","TOP","TOP AND SHORTS CO -ORD SET","TOTTENHAM","TRUNK","TRUNKS","Trunk","V NECK TEE PACK  2","VEST","WEMBLEY","WOVEN BOXER","Women Long sleeve Thermal Top","Woven Lounge pant OP"];
+const COLLS=["BOY","GIRL","INNERWEAR","LEG WEAR","LOUNGE WEAR","OUTER WEAR","PROMO","THERMAL WEAR","UNISEX","WINTER WEAR","WOMEN THERMAL WEAR"];
+const BRICKS=["ANKLE SOCKS","BODYSUIT","BOTTOM","BOXER","BRIEF","CREW SOCKS","CROP TOP","DRESS","FOOTIE SOCKS","GIFT-PACK","HOME WEAR","INNER BOXER","JABLA","JOG PANT","JOGGER","LEGGINGS","LONG TRUNK","LOOSE FIT PANT","LOUNGE PANT","LOUNGE VEST","LS T-SHIRT","PAJAMA","PANT","POLO T-SHIRT","PROMO-BACKPACK","QUARTER SOCKS","ROMPER","ROMPER WITH BIB","SHIRT","SHORTS","SKIRT","SNEAKER SOCKS","SOCKS","SPORT SOCKS","SWEAT PANT","SWEAT SHIRT","T-SHIRT","T-SHIRT AND SHORTS CO -ORD SET","TANK PACK","TANK TOP","TEE PACK","THERMAL BOTTOM","THERMAL TOP","THERMOSHIELD","TOP","TOP AND SHORTS CO -ORD SET","TRUNK","VEST"];
+const SIZES=["0_3M","0_3M/62CM","12-18M/86CM","18-24M/92CM","2-3Y","2-3Y/98CM","22CM","23 cm (39/42)","23CM","24 CM","25CM","26CM","27CM","3-4Y","3-4Y/104CM","30 x 18 x 53","35/37","37/40","39/42","3_6M","3_6M/68CM","4-5Y","4-5Y/110CM","43/46","5-6Y","5-6Y/116CM","6-9M","6-9M/74CM","6_9M/74CM","9-12M","9-12M/80CM","9_12M/80CM","FS","L","M","S","XL","XS","XXL"];
+const DESC_ROWS=[[2023,3,236,267344,767,0],[2023,3,241,541744,1536,0],[2023,3,199,788538,2169,0],[2023,3,251,156722,514,0],[2023,3,239,4289,14,0],[2023,3,245,71416,195,0],[2023,3,252,297717,775,0],[2023,3,244,97801,268,0],[2023,3,243,42161,116,0],[2023,3,237,213313,551,0],[2024,3,236,448930,1198,0],[2024,3,243,15602,42,0],[2024,3,252,3132217,8302,0],[2024,3,199,2312814,6525,0],[2024,3,237,663848,1939,0],[2024,3,241,66490,171,0],[2024,3,239,69055,205,0],[2024,3,245,714519,1877,0],[2024,3,244,94653,257,0],[2024,3,251,2221065,5811,0],[2025,3,199,3775726,10758,0],[2023,3,248,302609,854,0],[2023,3,289,209289,588,0],[2023,3,255,122837,332,0],[2023,3,235,202021,551,0],[2023,3,240,64225,132,0],[2024,3,248,1722453,4651,0],[2024,3,235,4288224,10545,0],[2024,3,255,945207,2698,0],[2024,3,273,73166,199,0],[2024,3,240,1051533,2509,0],[2025,3,235,3283366,7697,0],[2025,3,252,3174831,8429,0],[2023,3,247,72169,198,0],[2023,3,238,27147,90,0],[2023,3,242,21388,58,0],[2024,3,247,122449,312,0],[2024,3,242,73289,201,0],[2024,3,238,455032,1583,0],[2023,3,328,136387,326,0],[2024,3,328,177764,405,0],[2024,3,86,39567,457,0],[2025,3,86,799118,5666,0],[2024,3,289,1271863,3450,0],[2025,3,289,658828,1844,0],[2025,3,80,61,60,0],[2025,3,81,50,50,0],[2023,3,256,7706,22,0],[2023,3,249,88686,243,0],[2024,3,256,59714,180,0],[2024,3,254,149913,945,0],[2024,3,306,1157150,7446,0],[2024,3,327,1272871,8241,0],[2024,3,177,357919,725,0],[2024,3,216,347837,1048,0],[2024,3,303,650139,4080,0],[2024,3,89,350609,454,0],[2024,3,85,734320,1700,0],[2024,3,301,454196,916,0],[2024,3,184,1276420,3613,0],[2024,3,300,252090,410,0],[2024,3,302,243506,396,0],[2024,3,231,194585,350,0],[2024,3,84,267475,620,0],[2024,3,250,237609,650,0],[2024,3,299,381693,624,0],[2024,3,246,316117,865,0],[2024,3,253,285476,780,0],[2024,3,276,171314,470,0],[2024,3,275,99372,270,0],[2024,3,288,177390,480,0],[2024,3,280,196553,538,0],[2024,3,210,97965,180,0],[2024,3,211,56755,100,0],[2024,3,249,8092,22,0],[2024,3,274,442817,1323,0],[2025,3,251,2391198,6220,0],[2025,3,237,381033,1088,0],[2025,3,184,4361714,11513,0],[2025,3,306,2967383,19054,0],[2025,3,303,885031,5800,0],[2025,3,255,827509,2299,0],[2025,3,240,2770869,7238,0],[2025,3,327,2972652,19157,0],[2025,3,177,1622285,4211,0],[2025,3,301,1658194,3565,0],[2025,3,302,299474,498,0],[2025,3,89,1259281,1627,0],[2025,3,276,473429,1509,0],[2025,3,85,2500498,5895,0],[2025,3,299,726427,1185,0],[2025,3,210,173144,317,0],[2025,3,246,681379,1967,0],[2025,3,275,384739,1257,0],[2025,3,288,426258,1167,0],[2025,3,274,764252,2236,0],[2025,3,248,778609,2247,0],[2025,3,216,742074,2135,0],[2025,3,238,927095,3037,0],[2025,3,231,369555,666,0],[2025,3,253,518189,1574,0],[2025,3,84,695503,1616,0],[2025,3,250,680803,1861,0],[2025,3,280,870711,3410,0],[2025,3,211,1081212,2325,0],[2025,3,300,965120,1500,0],[2023,1,219,33071,218,0],[2023,1,167,36969,292,0],[2023,1,175,23765,97,0],[2023,1,92,65617,383,0],[2023,1,209,45368,257,0],[2023,1,257,81788,449,0],[2023,1,110,17810,97,0],[2023,1,188,33566,226,0],[2023,1,94,47926,215,0],[2023,1,326,36745,126,0],[2023,1,224,50443,183,0],[2023,1,154,11379,65,0],[2023,1,83,21665,118,0],[2024,1,94,703910,2782,0],[2024,1,175,407102,1650,0],[2024,1,326,526417,1969,0],[2024,1,224,276799,998,0],[2024,1,209,1254560,6507,0],[2024,1,219,535383,3226,0],[2024,1,167,725543,5463,0],[2024,1,92,416571,2374,0],[2024,1,154,37662,176,0],[2024,1,257,90938,397,0],[2024,1,110,728353,3528,0],[2024,1,83,210988,1122,0],[2024,1,188,76994,507,0],[2024,1,133,3272,3200,0],[2025,1,219,811284,5489,0],[2025,1,209,1780909,9327,0],[2025,1,110,1223440,6083,0],[2025,1,326,1367174,5394,0],[2025,1,188,274424,2015,0],[2025,1,167,755824,5933,0],[2025,1,224,1509949,5665,0],[2025,1,92,1261767,7243,0],[2025,1,94,1379667,5038,0],[2025,1,175,2022416,8016,0],[2025,1,83,632663,3182,0],[2025,1,178,3418381,19051,0],[2025,1,112,1457099,6466,0],[2025,1,96,1293110,5940,0],[2025,1,133,151,265,0],[2023,3,142,73696,178,0],[2023,3,383,1116147,1286,0],[2023,3,212,2780975,2842,0],[2023,3,158,414523,473,0],[2023,3,143,78215,176,0],[2023,3,141,74123,179,0],[2023,3,337,185853,304,0],[2023,3,336,96072,143,0],[2023,3,139,46544,85,0],[2023,3,140,53267,97,0],[2023,3,98,197316,402,0],[2023,3,331,174213,286,0],[2023,3,330,208626,346,0],[2023,3,334,149483,222,0],[2023,3,333,476013,708,0],[2023,3,335,489777,804,0],[2023,3,332,147955,271,0],[2023,1,129,47627,105,0],[2023,1,130,36386,84,0],[2023,3,213,273518,343,0],[2023,1,87,197393,556,0],[2023,1,88,364211,876,0],[2023,1,100,583726,2065,0],[2023,1,134,141444,385,0],[2023,1,135,326872,710,0],[2023,1,137,113138,463,0],[2023,1,156,194067,576,0],[2023,1,169,320753,671,0],[2023,1,174,463330,1160,0],[2023,1,186,328787,992,0],[2023,1,206,277978,454,0],[2023,1,207,852654,1389,0],[2023,1,222,175439,638,0],[2023,1,223,213047,599,0],[2023,1,229,282778,512,0],[2023,1,230,489340,799,0],[2023,1,233,123612,577,0],[2023,1,312,339492,1259,0],[2023,1,329,93935,384,0],[2023,1,152,732843,1388,0],[2023,3,99,2282189,4437,0],[2023,3,382,1059585,1939,0],[2023,1,131,617768,722,0],[2023,1,168,447169,1043,0],[2023,1,172,286713,466,0],[2023,1,304,239683,459,0],[2023,3,362,816165,886,0],[2023,3,338,272630,296,0],[2023,0,97,896643,2444,0],[2023,0,225,392058,1161,0],[2023,3,128,441516,1029,0],[2023,1,375,752177,1610,0],[2023,3,376,159268,237,0],[2023,3,214,171100,186,0],[2023,3,157,287569,313,0],[2023,1,204,126012,228,0],[2023,3,340,135919,170,0],[2023,3,187,113658,59,0],[2023,3,380,120706,131,0],[2023,1,173,376769,612,0],[2023,1,217,361696,736,0],[2023,1,258,168855,549,0],[2023,1,161,777153,1376,0],[2023,1,159,398188,1179,0],[2023,1,189,121524,330,0],[2023,1,197,458435,1242,0],[2023,1,125,106548,192,0],[2023,1,163,77388,126,0],[2023,1,164,177864,241,0],[2023,1,124,63191,79,0],[2023,1,221,908712,1220,0],[2023,1,196,97682,78,0],[2023,1,136,67147,51,0],[2023,1,126,41395,56,0],[2024,3,213,694130,838,0],[2024,3,157,729348,762,0],[2024,3,158,461162,492,0],[2024,3,337,1530591,2483,0],[2024,3,336,72643,107,0],[2024,1,87,2872852,7936,0],[2024,1,88,5794096,14160,0],[2024,0,97,9827562,27359,0],[2024,1,131,1394250,1619,0],[2024,1,134,1030107,2691,0],[2024,1,135,2515228,5409,0],[2024,1,137,149375,597,0],[2024,1,156,349344,987,0],[2024,1,164,1095557,1479,0],[2024,1,168,2578291,5896,0],[2024,1,169,1830949,3678,0],[2024,1,172,1510927,2444,0],[2024,1,174,1615929,3928,0],[2024,1,186,3220750,9853,0],[2024,1,189,709332,1913,0],[2024,1,204,597687,1119,0],[2024,1,207,11118186,18101,0],[2024,1,217,3433078,6971,0],[2024,1,222,1690494,6193,0],[2024,1,223,3468984,9814,0],[2024,0,225,4095405,12017,0],[2024,1,229,1686737,2910,0],[2024,1,230,4318575,6869,0],[2024,1,233,1187876,5546,0],[2024,1,258,776138,2473,0],[2024,1,312,6368402,22145,0],[2024,1,329,550398,2236,0],[2024,1,375,5913432,12501,0],[2024,1,124,316509,396,0],[2024,1,304,817202,1547,0],[2024,3,98,1080360,2183,0],[2024,3,331,306996,483,0],[2024,3,330,685938,1106,0],[2024,3,334,545937,796,0],[2024,3,333,2071263,3045,0],[2024,3,335,2280403,3639,0],[2024,3,332,651827,1206,0],[2024,3,128,1482297,3429,0],[2024,3,99,9412395,17977,0],[2024,3,362,6296421,6735,0],[2024,3,340,371299,444,0],[2024,3,338,1056180,1069,0],[2024,3,382,4984981,8947,0],[2024,3,380,713882,745,0],[2024,1,221,5081399,6841,0],[2024,1,100,15466099,59469,0],[2024,1,159,1693909,4987,0],[2024,3,376,395131,590,0],[2024,1,173,1757221,2871,0],[2024,1,206,3792216,6169,0],[2024,1,125,60080,108,0],[2024,3,187,308667,156,0],[2024,1,152,4924780,9050,0],[2024,1,161,5771778,9997,0],[2024,1,160,484216,1309,0],[2024,1,82,526270,1004,0],[2024,1,309,646975,1230,0],[2024,1,198,436661,1181,0],[2024,3,214,34030,37,0],[2024,3,139,27798,50,0],[2024,3,140,21085,38,0],[2024,1,218,313649,847,0],[2024,1,381,867039,2337,0],[2024,1,163,200769,324,0],[2024,1,126,157280,212,0],[2024,1,197,2901355,8268,0],[2024,1,196,957902,728,0],[2024,1,151,481309,600,0],[2024,1,145,392454,751,0],[2024,1,138,474656,903,0],[2024,1,136,356316,272,0],[2024,1,153,642302,745,0],[2024,3,215,145587,158,0],[2024,3,379,235570,242,0],[2024,1,234,471481,1330,0],[2024,3,377,821288,1283,0],[2024,3,132,315679,501,0],[2024,1,129,278593,571,0],[2024,1,130,346235,708,0],[2024,3,1,4353,9,0],[2024,3,3,8706,18,0],[2024,3,7,17408,36,0],[2024,3,46,3672906,4054,0],[2024,3,48,2230125,2449,0],[2024,0,149,1741357,1332,0],[2024,0,323,1609398,1071,0],[2024,0,193,1603339,1377,0],[2024,0,166,2011874,1336,0],[2024,0,308,2057570,1429,0],[2024,3,49,1253119,1370,0],[2024,3,47,2094018,2305,0],[2024,1,111,757530,463,0],[2024,1,202,23829,33,0],[2025,1,100,24770320,85809,0],[2025,1,223,4010929,10988,0],[2025,0,97,11175212,30804,0],[2025,1,207,10495558,16717,0],[2025,1,168,4796174,11244,0],[2025,1,169,717817,1428,0],[2025,1,222,2688321,9531,0],[2025,0,225,3333313,9708,0],[2025,1,312,10117425,34512,0],[2025,1,329,182353,733,0],[2025,1,87,6353907,17254,0],[2025,1,88,11679631,27219,0],[2025,3,382,8905835,14028,0],[2025,1,186,3580609,10539,0],[2025,1,197,9217334,24239,0],[2025,1,233,1369140,6472,0],[2025,1,206,3723348,5987,0],[2025,3,333,1187259,2688,0],[2025,3,99,12207618,23049,0],[2024,3,66,546242,1351,0],[2024,3,67,922495,2292,0],[2024,3,68,901695,2238,0],[2024,3,69,578427,1428,0],[2024,3,70,657265,1922,0],[2024,3,71,614490,1798,0],[2024,3,74,1390041,3466,0],[2024,3,75,736141,1841,0],[2024,3,76,1331983,3318,0],[2024,3,77,749747,1860,0],[2024,3,25,581857,1556,0],[2024,3,64,445916,1304,0],[2024,3,65,444341,1299,0],[2024,3,61,727486,1798,0],[2024,3,73,153954,401,0],[2024,3,40,545786,872,0],[2024,3,57,391851,963,0],[2024,3,58,389459,957,0],[2024,3,59,937852,2011,0],[2024,3,20,1128924,2596,0],[2024,3,21,741259,1699,0],[2024,3,37,1011351,2317,0],[2024,3,62,972335,2082,0],[2024,3,23,461113,1227,0],[2024,3,24,234907,617,0],[2024,3,29,403619,1072,0],[2024,3,31,503652,1342,0],[2024,3,34,867444,1986,0],[2024,3,38,937663,2146,0],[2024,3,22,464407,1060,0],[2024,3,26,531052,1416,0],[2024,3,28,477723,1272,0],[2024,3,36,965127,2212,0],[2024,3,30,479078,1276,0],[2024,3,45,261493,357,0],[2024,3,79,67294,157,0],[2024,3,39,472208,749,0],[2024,3,43,527017,739,0],[2024,3,44,518441,727,0],[2024,1,150,2042507,6610,0],[2025,1,150,11009646,34319,0],[2025,3,128,7917720,15362,0],[2025,1,145,120946,230,0],[2025,1,135,177797,374,0],[2025,3,20,5175276,11936,0],[2025,3,21,603824,1388,0],[2025,3,23,1481946,3963,0],[2025,3,24,1270556,3441,0],[2025,3,40,356658,572,0],[2025,1,159,3528692,9954,0],[2025,3,37,2682465,6204,0],[2025,3,45,516697,733,0],[2025,3,70,1189703,3366,0],[2025,3,71,2391320,6704,0],[2025,3,74,12968127,30733,0],[2025,3,75,7395152,17542,0],[2025,3,76,2210531,5402,0],[2025,3,77,1892805,4580,0],[2025,3,25,915161,2431,0],[2025,3,26,965584,2600,0],[2025,3,28,692573,1864,0],[2025,3,30,1712036,4507,0],[2025,3,31,894614,2411,0],[2025,3,62,3805551,8075,0],[2025,1,258,469623,1530,0],[2025,3,59,2006784,4297,0],[2025,3,66,1383464,3311,0],[2025,3,67,1897527,4549,0],[2025,3,68,2529234,6013,0],[2025,3,69,1282529,3144,0],[2025,3,33,4580874,10601,0],[2025,3,42,724149,1180,0],[2025,3,57,581146,1455,0],[2025,3,58,752968,1878,0],[2025,3,36,3435844,7947,0],[2025,3,64,449716,1309,0],[2025,3,65,2758437,7658,0],[2025,3,29,864901,2331,0],[2025,1,230,7422417,11622,0],[2025,1,309,533934,982,0],[2025,3,22,3708080,8594,0],[2025,3,63,3776991,8073,0],[2025,1,173,3403937,5395,0],[2025,3,98,5440177,11106,0],[2025,1,221,11251069,15742,0],[2025,1,82,119498,227,0],[2025,3,331,150688,313,0],[2025,3,334,356504,1175,0],[2025,3,335,1419894,4382,0],[2025,3,332,167817,481,0],[2025,3,376,13503186,30760,0],[2025,3,34,5596505,12958,0],[2025,3,38,3977871,9171,0],[2025,1,174,940478,2306,0],[2025,3,362,337589,413,0],[2025,1,152,10122299,18670,0],[2025,1,161,12707354,22232,0],[2025,1,229,2934179,5019,0],[2025,1,375,5225336,11334,0],[2025,1,196,370097,383,0],[2025,3,337,6559770,10834,0],[2025,3,79,997758,2193,0],[2025,3,61,656943,1630,0],[2025,3,73,1145903,2917,0],[2025,1,172,1041368,1628,0],[2025,1,134,61241,152,0],[2025,3,3,4775667,13951,0],[2025,3,4,1779846,5041,0],[2025,3,6,2321290,7985,0],[2025,3,7,2136535,6589,0],[2025,3,0,2612162,9163,0],[2025,3,2,2323911,8827,0],[2025,3,46,10034280,11175,0],[2025,3,48,4818734,5350,0],[2025,1,217,2590582,5200,0],[2025,1,325,914770,1736,0],[2025,1,208,754648,1430,0],[2025,1,176,869652,1652,0],[2025,1,304,326551,611,0],[2025,1,138,418695,799,0],[2025,3,158,47368,53,0],[2025,1,151,288202,388,0],[2025,3,78,923985,2150,0],[2025,3,41,810291,1293,0],[2025,3,377,1959301,4779,0],[2025,3,214,26020,29,0],[2025,3,213,179015,393,0],[2025,3,340,595690,2265,0],[2025,3,215,32298,37,0],[2025,1,153,527824,650,0],[2025,3,72,258944,700,0],[2025,1,195,817015,1554,0],[2025,1,171,524959,1000,0],[2025,1,95,622589,1192,0],[2025,1,313,666897,886,0],[2025,1,109,1776161,2357,0],[2025,3,338,161630,195,0],[2025,1,189,309379,740,0],[2025,1,156,244027,627,0],[2025,3,49,1671663,1856,0],[2025,3,47,5375775,5991,0],[2025,3,32,3173690,7344,0],[2025,3,35,4439225,10318,0],[2025,3,140,7860,13,0],[2025,1,381,720685,1962,0],[2025,3,8,2254308,7875,0],[2025,3,5,65755,214,0],[2025,3,1,1532906,5777,0],[2025,3,157,31301,35,0],[2025,1,136,942617,911,0],[2025,3,27,750983,2034,0],[2025,1,124,35700,45,0],[2025,1,179,4042187,8458,0],[2025,1,126,31376,40,0],[2025,1,130,73150,148,0],[2025,1,160,7360,20,0],[2025,3,294,2439152,2639,0],[2025,1,131,447951,552,0],[2025,3,262,760106,1774,0],[2025,3,259,197976,542,0],[2025,3,269,734856,1843,0],[2025,3,298,1675096,1871,0],[2025,3,297,1156919,1331,0],[2025,3,295,801145,920,0],[2025,3,290,83432,245,0],[2024,3,32,570842,1308,0],[2024,3,33,342535,787,0],[2024,3,63,319037,673,0],[2024,0,148,13778,18,0],[2025,3,39,385889,623,0],[2025,3,43,446342,616,0],[2025,3,44,223165,316,0],[2025,1,198,740,2,0],[2025,1,218,740,2,0],[2025,1,234,511937,1434,0],[2025,1,204,78007,138,0],[2025,3,336,11745,16,0],[2025,3,330,181440,467,0],[2025,0,308,3009545,2215,0],[2025,3,293,739793,849,0],[2025,3,296,1228186,1412,0],[2025,1,129,23228,47,0],[2025,3,51,2376566,2670,0],[2025,0,149,156804,127,0],[2025,0,323,3025838,2423,0],[2025,0,193,2901242,2621,0],[2025,0,166,3018017,2124,0],[2025,1,111,36063,23,0],[2025,3,132,1757016,4590,0],[2025,1,205,1127082,2838,0],[2025,0,147,1339575,1031,0],[2025,3,50,1113391,1201,0],[2025,1,202,35429,48,0],[2025,1,137,18612,72,0],[2024,3,60,747560,1604,0],[2025,3,60,2344254,5057,0],[2025,3,139,2977,5,0],[2023,3,132,56310,92,0],[2025,3,380,911,1,0],[2025,3,54,6132,7,0],[2025,3,52,3514,4,0],[2025,3,55,863,1,0],[2025,3,56,863,1,0],[2025,3,53,878,1,0],[2025,3,236,22866,64,0],[2025,3,291,81338,239,0],[2025,3,144,914344,2463,0],[2025,3,378,91983,227,0],[2025,3,271,324769,810,0],[2025,3,328,4273,10,0],[2025,0,220,241128,195,0],[2025,0,162,446138,329,0],[2025,3,287,762833,1650,0],[2025,3,279,948661,2346,0],[2025,3,278,1872119,4050,0],[2025,3,384,183589,271,0],[2025,1,125,1686,3,0],[2025,3,13,483491,1594,0],[2025,3,15,641166,1960,0],[2025,3,10,12945,16,0],[2025,3,17,60299,226,0],[2025,3,341,27538,121,0],[2025,3,16,2813,4,0],[2025,3,11,6497,9,0],[2025,3,12,7716,12,0],[2025,3,19,32812,70,0],[2025,3,14,4905,9,0],[2025,2,170,78219,120,0],[2025,3,9,1,1,0],[2025,3,18,2,1,0],[2026,3,337,1024066,1635,0],[2026,3,76,315893,790,0],[2026,3,20,283569,655,0],[2026,3,22,129557,302,0],[2026,3,38,400548,1081,0],[2026,3,376,3953106,8966,0],[2026,3,279,817865,1928,0],[2026,1,100,2286765,7563,0],[2026,3,128,1784084,3332,0],[2026,3,99,1621498,3174,0],[2026,3,382,611398,1115,0],[2026,1,325,124422,236,0],[2026,1,176,113477,215,0],[2026,1,171,54785,104,0],[2026,3,75,848398,2047,0],[2026,3,36,372782,992,0],[2026,1,230,908541,1449,0],[2026,1,150,1625194,5116,0],[2026,3,37,360168,827,0],[2026,1,138,316915,600,0],[2026,1,151,418877,553,0],[2026,3,66,123144,301,0],[2026,3,67,131090,325,0],[2026,3,68,209873,520,0],[2026,3,69,125115,313,0],[2026,3,32,289868,656,0],[2026,3,271,207982,512,0],[2026,3,269,144717,360,0],[2026,3,378,170961,424,0],[2026,1,87,985941,2732,0],[2026,1,88,1546101,3652,0],[2026,0,97,1656574,4654,0],[2026,1,205,428994,1073,0],[2026,1,145,1566,5,0],[2026,3,63,171931,370,0],[2026,3,278,1177351,2530,0],[2026,1,153,531904,650,0],[2026,0,220,2398870,1934,0],[2026,1,125,1686,3,0],[2026,1,124,9744,12,0],[2026,1,126,8992,12,0],[2026,1,197,972675,2452,0],[2026,1,221,206322,295,0],[2026,3,338,418656,934,0],[2026,3,4,369055,1554,0],[2026,3,6,90602,318,0],[2026,3,7,2125,6,0],[2026,1,179,352598,750,0],[2026,3,255,48726,130,0],[2026,3,216,421443,2801,0],[2026,3,238,295172,2621,0],[2026,1,312,988942,3512,0],[2026,3,74,2382246,5658,0],[2026,3,85,16695,37,0],[2026,3,246,204963,1207,0],[2026,3,327,460102,2892,0],[2026,1,173,570264,1311,0],[2026,1,161,539304,963,0],[2026,1,152,815908,1551,0],[2026,3,334,26704,81,0],[2026,3,333,86428,261,0],[2026,3,335,162779,542,0],[2026,3,377,542277,1683,0],[2026,3,98,946189,1901,0],[2026,3,77,117153,287,0],[2026,1,94,296775,1114,0],[2026,1,219,183988,1262,0],[2026,1,326,406102,1556,0],[2026,1,83,251497,1583,0],[2026,1,110,152672,845,0],[2026,1,92,138143,782,0],[2026,1,175,81567,355,0],[2026,1,229,412591,731,0],[2026,3,33,322232,739,0],[2026,3,34,469634,1327,0],[2026,3,35,362009,1035,0],[2026,3,62,211177,446,0],[2026,3,287,447032,957,0],[2026,3,384,299701,438,0],[2026,0,225,1027494,3013,0],[2026,3,290,36563,108,0],[2026,3,291,34260,101,0],[2026,1,222,246163,875,0],[2026,3,78,114943,269,0],[2026,3,59,51584,117,0],[2026,3,60,68379,159,0],[2026,3,262,249105,576,0],[2026,1,207,1706039,2961,0],[2026,0,162,1332250,982,0],[2026,3,303,15836,103,0],[2026,3,144,756712,2026,0],[2026,3,86,18998,126,0],[2026,3,23,75746,210,0],[2026,3,70,121581,346,0],[2026,3,71,120669,341,0],[2026,3,252,180608,1091,0],[2026,1,95,27278,52,0],[2026,3,30,110184,297,0],[2026,3,79,49166,121,0],[2026,3,43,9857,14,0],[2026,3,25,67111,176,0],[2026,3,132,624480,1615,0],[2026,0,180,2116314,4538,0],[2026,3,240,1071029,2583,0],[2026,3,276,818109,4254,0],[2026,3,275,436965,1224,0],[2026,3,288,233050,757,0],[2026,3,2,184027,618,0],[2026,3,0,1229163,4954,0],[2026,3,235,147427,845,0],[2026,3,89,589084,2121,0],[2026,3,84,11631,40,0],[2026,1,168,100499,248,0],[2026,3,251,349110,2656,0],[2026,3,41,40922,66,0],[2026,3,65,503440,1430,0],[2026,1,174,503480,1248,0],[2026,1,206,654148,1251,0],[2026,1,82,15258,29,0],[2026,1,208,28626,55,0],[2026,3,248,338429,2590,0],[2026,3,199,316480,972,0],[2026,3,237,140960,1040,0],[2026,3,274,328088,2469,0],[2026,3,259,149463,403,0],[2026,3,226,1754596,2375,0],[2026,1,186,564929,1701,0],[2026,1,381,400524,1078,0],[2026,1,172,529974,853,0],[2026,1,195,301007,572,0],[2026,1,109,594818,795,0],[2026,1,131,396192,477,0],[2026,1,309,318200,601,0],[2026,1,136,48735,48,0],[2026,3,24,65385,181,0],[2026,3,1,508735,1944,0],[2026,3,15,664912,2851,0],[2026,3,341,145421,619,0],[2026,3,19,457684,1977,0],[2026,3,13,234786,986,0],[2026,3,17,321112,1257,0],[2026,3,64,39982,111,0],[2026,3,301,209501,1230,0],[2026,3,31,105454,284,0],[2026,3,61,61363,153,0],[2026,3,45,37197,53,0],[2026,1,304,33122,62,0],[2026,1,189,346471,930,0],[2026,1,223,240570,666,0],[2026,3,184,300908,1740,0],[2026,3,253,368494,2849,0],[2026,3,42,5692,10,0],[2026,3,73,49576,134,0],[2026,3,57,14686,44,0],[2026,0,108,5141684,8309,0],[2026,3,3,179502,623,0],[2026,3,272,3248,4,0],[2026,0,148,101102,126,0],[2026,1,202,67031,92,0],[2026,3,236,41259,312,0],[2026,3,289,2096,10,0],[2026,1,167,2799,24,0],[2026,1,224,109894,534,0],[2026,1,188,41148,384,0],[2026,3,306,997619,6215,0],[2026,3,231,392711,2040,0],[2026,3,299,11569,25,0],[2026,1,233,189487,892,0],[2026,3,18,42800,48,0],[2026,3,44,4141,7,0],[2026,2,170,262034,402,0],[2026,1,375,195148,425,0],[2026,3,280,556474,1653,0],[2026,3,211,835178,1653,0],[2026,3,10,57752,114,0],[2026,3,9,40148,85,0],[2026,3,213,11808,25,0],[2026,3,11,63986,127,0],[2026,3,362,680365,1401,0],[2026,1,258,302976,975,0],[2026,3,39,5619,9,0],[2026,1,159,109767,322,0],[2026,3,332,1435,3,0],[2026,3,139,3495,6,0],[2026,1,329,3432,14,0],[2026,3,177,312252,654,0],[2026,2,370,64190,192,0],[2026,2,371,5420,9,0],[2026,2,372,28082,84,0],[2026,2,363,11443,19,0],[2026,2,113,870,1,0],[2026,2,114,1606,2,0],[2026,2,365,30162,82,0],[2026,2,366,23555,44,0],[2026,2,368,37473,70,0],[2026,2,342,40957,68,0],[2026,2,344,16866,28,0],[2026,2,348,3212,4,0],[2026,2,350,8026,20,0],[2026,2,351,4214,9,0],[2026,2,352,28895,72,0],[2026,2,353,18698,43,0],[2026,2,354,42764,71,0],[2026,2,355,1872,4,0],[2026,2,359,49531,74,0],[2026,2,343,15660,26,0],[2026,2,347,8836,12,0],[2026,2,360,11639,29,0],[2026,2,361,33123,66,0],[2026,2,346,43970,73,0],[2026,2,101,2409,3,0],[2026,2,104,30790,46,0],[2026,2,105,21684,36,0],[2026,2,345,84583,158,0],[2026,2,357,1806,3,0],[2026,2,102,2005,6,0],[2026,2,103,1603,8,0],[2026,2,106,669,1,0],[2026,2,107,669,1,0],[2026,2,121,2137,8,0],[2026,2,118,2708,9,0],[2026,2,119,2139,8,0],[2026,2,122,267,1,0],[2026,2,120,534,2,0],[2026,2,123,468,1,0],[2026,2,116,1605,4,0],[2026,2,314,4216,7,0],[2026,2,315,8432,14,0],[2026,2,316,14723,22,0],[2026,2,317,20084,25,0],[2026,2,318,18477,23,0],[2026,2,319,602,1,0],[2026,2,320,52877,79,0],[2026,2,364,37723,94,0],[2026,2,187,7961,17,0],[2026,2,322,353042,765,0],[2026,2,321,114379,183,0],[2026,2,338,434281,1046,0],[2026,2,373,61288,173,0],[2026,2,340,60848,182,0],[2026,2,155,28627,73,0],[2026,2,165,153076,223,0],[2026,2,324,7495,13,0],[2026,2,194,39524,104,0],[2026,2,374,71817,111,0],[2026,2,339,27444,41,0],[2026,2,232,122788,228,0],[2026,2,311,55553,83,0],[2026,2,310,35663,73,0],[2026,2,201,130079,243,0],[2026,2,226,128640,199,0],[2026,2,200,3212,6,0],[2026,2,127,3011,5,0],[2026,2,192,70279,105,0],[2026,2,307,49196,72,0],[2026,2,228,8836,11,0],[2026,2,146,2611,3,0],[2026,2,227,3609,9,0],[2026,2,183,4010,10,0],[2026,2,93,4014,6,0],[2026,2,305,34607,38,0],[2026,2,91,1338,2,0],[2026,2,90,5152,7,0],[2026,2,190,4010,10,0],[2026,2,191,3208,8,0],[2026,1,217,13980,28,0],[2026,1,169,159538,330,0],[2026,1,196,32213,35,0],[2026,3,58,33298,88,0],[2026,3,158,75265,79,0],[2026,3,14,42800,47,0],[2026,3,16,55548,61,0],[2026,3,26,124378,331,0],[2026,3,331,1941,3,0],[2026,3,330,2588,4,0],[2026,3,8,55821,151,0],[2026,3,268,13875,39,0],[2026,3,260,19021,49,0],[2026,3,261,19021,49,0],[2026,3,270,20609,49,0],[2026,3,263,22195,49,0],[2026,3,264,22195,49,0],[2026,3,265,17433,49,0],[2026,3,266,17433,49,0],[2026,3,267,17433,49,0],[2026,3,292,20609,49,0],[2026,3,286,1941,5,0],[2026,3,285,1941,5,0],[2026,3,283,2103,5,0],[2026,3,284,2103,5,0],[2026,3,281,20188,48,0],[2026,3,282,20609,49,0],[2026,3,277,20609,49,0],[2026,3,27,78223,210,0],[2026,3,28,107118,287,0],[2026,3,29,109313,294,0],[2026,3,210,383272,2010,0],[2026,3,72,17193,48,0],[2026,3,250,126927,1003,0],[2026,3,302,207272,988,0],[2026,3,241,17484,139,0],[2026,3,21,4269,12,0],[2026,1,160,3790,10,0],[2026,1,313,8481,11,0],[2026,3,140,583,1,0],[2026,3,40,2616,4,0],[2026,1,209,30885,240,0],[2026,1,234,9853,30,0],[2026,1,134,1137,3,0],[2026,3,300,11081,17,0],[2026,3,336,712,1,0],[2026,1,156,331246,970,0],[2026,3,203,7656,11,0],[2026,2,369,13373,40,0],[2026,2,367,22287,37,0],[2026,2,349,21083,35,0],[2026,2,356,31048,58,0],[2026,2,358,25759,55,0],[2026,2,117,334,1,0],[2026,2,115,4415,11,0],[2026,2,185,6018,18,0],[2026,2,181,19411,29,0],[2026,2,182,63244,105,0]];
+const COLL_ROWS=[[2023,3,3,3735509,10299,0],[2024,3,3,34187741,104258,0],[2025,3,3,52324638,171190,0],[2025,3,6,111,110,0],[2023,1,3,506112,2726,0],[2024,1,3,5994492,33899,0],[2025,1,3,19188258,95107,0],[2023,3,5,6547673,10761,0],[2023,3,10,1116147,1286,0],[2023,3,7,2780975,2842,0],[2023,3,2,2508136,4031,0],[2023,1,7,84013,189,0],[2023,1,2,9900667,23099,0],[2023,1,5,3386241,5949,0],[2023,0,2,1288701,3605,0],[2024,3,5,28588564,44831,0],[2024,3,2,36227900,78869,0],[2024,1,2,91218749,234726,0],[2024,0,2,13922967,39376,0],[2024,1,5,29373918,55324,0],[2024,1,7,624828,1279,0],[2024,3,7,9250168,10178,0],[2024,0,9,9023538,6545,0],[2025,1,2,115019863,299351,0],[2025,0,2,14508525,40512,0],[2025,3,5,55287013,131080,0],[2025,1,5,69813037,142790,0],[2025,3,2,141992882,332565,0],[2025,3,7,25252029,28031,0],[2025,1,7,96378,195,0],[2025,3,10,7985248,9015,0],[2024,0,5,13778,18,0],[2025,0,9,13451021,10541,0],[2025,0,5,687266,524,0],[2025,3,9,205673,233,0],[2025,2,8,78219,120,0],[2026,3,2,21546957,51586,0],[2026,1,2,14734854,37225,0],[2026,3,5,6132113,15723,0],[2026,1,5,4371487,9342,0],[2026,0,2,2684068,7667,0],[2026,0,5,4805827,5868,0],[2026,3,3,12115012,59530,0],[2026,1,3,1695470,8679,0],[2026,2,8,434570,684,0],[2026,2,1,1149117,2599,0],[2026,2,0,1762805,3225,0],[2026,3,4,6073488,15792,0],[2026,1,4,3394510,7338,0],[2026,0,9,4760148,6755,0],[2026,0,4,1524245,3266,0],[2026,1,9,205769,274,0],[2026,3,9,705351,1029,0]];
+const BRICK_ROWS=[[2023,3,8,815345,2273,0],[2023,3,31,1195296,3368,0],[2023,3,25,293569,815,0],[2023,3,33,643393,1689,0],[2023,3,5,213313,551,0],[2024,3,8,2264613,5548,0],[2024,3,31,14908532,50745,0],[2024,3,33,5382993,14475,0],[2024,3,5,310286,1364,0],[2024,3,25,1483696,3813,0],[2025,3,31,14133772,51036,0],[2023,3,0,574593,1603,0],[2024,3,0,9837621,28313,0],[2025,3,0,8201690,24445,0],[2025,3,33,3743273,9883,0],[2025,3,24,111,110,0],[2025,3,8,1673882,3807,0],[2025,3,25,420863,930,0],[2023,1,0,466637,2511,0],[2023,1,5,39475,215,0],[2024,1,0,5055151,29249,0],[2024,1,5,939341,4650,0],[2025,1,0,11605323,59611,0],[2025,1,5,551103,2754,0],[2023,3,3,4009324,7938,0],[2023,3,44,3897122,4128,0],[2023,3,40,1556585,1752,0],[2023,3,47,646491,1065,0],[2023,3,4,587104,995,0],[2023,3,46,1274541,1971,0],[2023,1,2,47627,105,0],[2023,1,44,36386,84,0],[2023,3,38,868106,1012,0],[2023,1,4,2123052,5220,0],[2023,1,46,4979163,9193,0],[2023,1,47,1345940,4700,0],[2023,1,19,1345964,3794,0],[2023,1,36,1749679,3223,0],[2023,0,16,1288701,3605,0],[2023,3,13,113658,59,0],[2023,1,3,458435,1242,0],[2023,1,11,106548,192,0],[2023,1,21,104586,135,0],[2023,1,18,1006394,1298,0],[2023,1,13,67147,51,0],[2024,3,38,1974394,2239,0],[2024,3,40,8070418,8576,0],[2024,3,47,3425274,5568,0],[2024,1,4,17171125,42036,0],[2024,1,46,43237243,84591,0],[2024,0,16,13922967,39376,0],[2024,1,19,5144652,14288,0],[2024,1,47,25605649,93703,0],[2024,1,21,497618,641,0],[2024,1,36,17305733,36015,0],[2024,3,4,9458203,23516,0],[2024,3,46,23344423,49785,0],[2024,3,3,15879673,30353,0],[2024,1,18,6039301,7569,0],[2024,1,11,60080,108,0],[2024,3,13,308667,156,0],[2024,1,3,2901355,8268,0],[2024,1,29,1516065,2096,0],[2024,1,13,356316,272,0],[2024,1,2,278593,571,0],[2024,1,44,346235,708,0],[2024,3,36,30467,63,0],[2024,3,44,5766924,6359,0],[2024,3,2,3483244,3819,0],[2024,0,13,1741357,1332,0],[2024,0,18,1623176,1089,0],[2024,0,35,5672783,4142,0],[2024,1,35,757530,463,0],[2025,1,47,38650707,131593,0],[2025,1,46,46249962,90967,0],[2025,0,16,14508525,40512,0],[2025,1,4,23498227,58793,0],[2025,3,3,29031173,52439,0],[2025,1,3,9217334,24239,0],[2025,3,46,106709817,248064,0],[2024,3,18,2324945,3444,0],[2025,1,36,40471135,88390,0],[2025,1,29,7422217,12969,0],[2025,3,4,23267485,62539,0],[2025,3,18,3754504,5763,0],[2025,1,19,5492199,15157,0],[2025,3,47,12015580,21962,0],[2025,1,18,11621166,16125,0],[2025,3,40,559969,680,0],[2025,3,36,19796858,65416,0],[2025,3,44,17446185,19502,0],[2025,3,2,10233697,11457,0],[2025,3,38,2144509,6782,0],[2025,1,13,942617,911,0],[2025,1,21,102505,133,0],[2025,1,44,73150,148,0],[2025,3,43,1675096,1871,0],[2025,0,35,8928804,6960,0],[2025,1,2,23228,47,0],[2025,0,13,156804,127,0],[2025,0,18,3713104,2947,0],[2025,1,35,36063,23,0],[2025,1,16,1127082,2838,0],[2025,0,34,1339575,1031,0],[2025,1,32,7031832,32742,0],[2025,3,32,24151158,81089,0],[2025,3,42,3524636,3828,0],[2025,3,41,563336,621,0],[2025,1,11,1686,3,0],[2025,2,9,78219,120,0],[2026,3,47,1974462,3543,0],[2026,3,46,15986643,38365,0],[2026,1,47,3844068,12790,0],[2026,3,3,4016980,7621,0],[2026,1,36,4717810,11244,0],[2026,1,46,5736373,11299,0],[2026,1,29,1908244,2764,0],[2026,3,18,1171353,1716,0],[2026,1,4,3129793,7615,0],[2026,0,16,2684068,7667,0],[2026,1,16,428994,1073,0],[2026,0,18,8973906,11351,0],[2026,1,11,1686,3,0],[2026,1,21,85767,116,0],[2026,1,3,972675,2452,0],[2026,1,18,238535,330,0],[2026,3,40,1212751,2454,0],[2026,3,36,2581148,10129,0],[2026,3,32,12115012,59530,0],[2026,1,32,1695470,8679,0],[2026,3,4,3585852,9678,0],[2026,0,29,592069,1272,0],[2026,1,19,1593940,4445,0],[2026,3,13,1754596,2375,0],[2026,1,13,48735,48,0],[2026,3,38,2138757,8197,0],[2026,2,9,262034,402,0],[2026,2,44,153560,449,0],[2026,2,7,177765,269,0],[2026,2,45,74293,114,0],[2026,2,15,107409,280,0],[2026,2,29,605791,1222,0],[2026,2,28,477874,730,0],[2026,2,36,525237,1276,0],[2026,2,23,233337,429,0],[2026,2,37,82327,126,0],[2026,2,14,10572,20,0],[2026,2,39,74221,222,0],[2026,2,6,28627,73,0],[2026,2,30,7495,13,0],[2026,2,27,55553,83,0],[2026,2,26,35663,73,0],[2026,2,20,128474,240,0],[2026,2,22,211364,324,0],[2026,2,17,3212,6,0],[2026,2,1,3011,5,0],[2026,0,14,1524245,3266,0],[2026,3,21,35367,52,0],[2026,2,12,6018,18,0],[2026,2,10,82655,134,0]];
+const SIZE_ROWS=[[2023,3,6,850210,2306,0],[2024,3,6,1525280,4190,0],[2025,3,6,1176715,3671,0],[2023,3,7,1623592,4520,0],[2024,3,7,4751313,12177,0],[2025,3,7,2284402,5910,0],[2023,3,8,497853,1422,0],[2024,3,8,4242970,11513,0],[2025,3,8,4628329,12285,0],[2023,3,9,155914,424,0],[2024,3,9,1092262,2966,0],[2025,3,9,23194,61,0],[2023,3,10,112881,272,0],[2024,3,10,63801,519,0],[2025,3,10,799118,5666,0],[2023,3,11,211944,546,0],[2024,3,11,1574846,4164,0],[2025,3,11,663101,1854,0],[2023,3,12,41473,135,0],[2024,3,12,44816,146,0],[2025,3,15,111,110,0],[2024,3,16,46401,156,0],[2023,3,17,241642,674,0],[2024,3,17,20196129,64474,0],[2025,3,17,42471681,140261,0],[2024,3,18,373974,1920,0],[2025,3,18,5160,39,0],[2024,3,23,201768,1513,0],[2023,1,32,506112,2726,0],[2024,1,32,5994492,33899,0],[2024,3,32,74181,520,0],[2025,1,32,19188258,95107,0],[2025,3,32,267667,1400,0],[2023,3,33,4140380,6030,0],[2023,1,33,4697210,10102,0],[2023,0,33,473855,1323,0],[2024,3,33,23254548,42747,0],[2024,1,33,40411700,95979,0],[2024,0,33,7399148,15462,0],[2025,1,33,63292234,147983,0],[2025,0,33,10262607,18667,0],[2025,3,33,77828042,169124,0],[2023,3,34,4336929,6314,0],[2023,1,34,4876175,10647,0],[2023,0,34,440383,1229,0],[2024,3,34,24270184,44484,0],[2024,1,34,42709659,103802,0],[2024,0,34,7345477,15326,0],[2025,1,34,59668852,144051,0],[2025,0,34,9323357,16260,0],[2025,3,34,78635191,171375,0],[2023,3,35,2014464,2914,0],[2023,1,35,1341762,3333,0],[2023,0,35,82538,223,0],[2024,3,35,9564525,15942,0],[2024,1,35,14831499,37931,0],[2024,0,35,1884253,3249,0],[2025,1,35,23336599,60674,0],[2025,3,35,24599613,53924,0],[2025,0,35,1950114,3571,0],[2023,3,36,1886824,2883,0],[2023,1,36,2431827,5095,0],[2023,0,36,242080,685,0],[2024,3,36,13263671,24306,0],[2024,1,36,22371122,51037,0],[2024,0,36,4629567,9143,0],[2025,1,36,35302185,80714,0],[2025,0,36,4730132,8958,0],[2025,3,36,38794183,82438,0],[2023,3,37,74939,92,0],[2024,3,37,2177,5,0],[2025,3,37,29089,45,0],[2025,1,37,68713,228,0],[2023,3,38,499395,687,0],[2023,1,38,23947,60,0],[2023,0,38,49845,145,0],[2024,3,38,3711527,6394,0],[2024,1,38,893515,2580,0],[2024,0,38,1701838,2759,0],[2025,0,38,2380602,4121,0],[2025,1,38,3260695,8686,0],[2025,3,38,10836727,24018,0],[2025,3,23,5271,43,0],[2025,2,0,78219,120,0],[2026,3,34,11479163,28180,0],[2026,3,33,11339232,28234,0],[2026,3,36,6105476,13722,0],[2026,3,38,1918450,4423,0],[2026,1,35,3198444,8323,0],[2026,3,35,3615583,9566,0],[2026,1,34,7271952,17144,0],[2026,1,33,7410196,17314,0],[2026,1,36,4317966,10026,0],[2026,0,34,4712196,7982,0],[2026,0,33,4768518,8291,0],[2026,0,36,2551487,4608,0],[2026,0,38,251113,499,0],[2026,0,35,1490974,2176,0],[2026,3,17,11525822,56805,0],[2026,1,32,1695470,8679,0],[2026,1,38,489678,1312,0],[2026,3,10,18998,126,0],[2026,3,7,187869,1204,0],[2026,3,8,173283,672,0],[2026,3,9,839,4,0],[2026,3,6,202256,657,0],[2026,3,11,2096,10,0],[2026,3,18,2247,29,0],[2026,3,23,1602,23,0],[2026,2,0,266046,414,0],[2026,1,37,18384,60,0],[2026,2,27,223191,423,0],[2026,2,30,266373,517,0],[2026,2,2,227733,447,0],[2026,2,22,355051,709,0],[2026,2,5,319588,646,0],[2026,2,14,323358,659,0],[2026,2,3,221886,416,0],[2026,2,25,305145,600,0],[2026,2,28,74934,153,0],[2026,2,1,40145,79,0],[2026,2,20,60831,108,0],[2026,2,31,602,1,0],[2026,2,26,18335,32,0],[2026,2,29,16496,28,0],[2026,2,24,151734,322,0],[2026,2,13,159740,322,0],[2026,2,4,149471,307,0],[2026,2,21,161014,317,0],[2026,3,37,5,5,0],[2026,2,19,4819,8,0]];
 let selectedBrand = 'ALL';
 let charts = {};
 
@@ -703,6 +1407,7 @@ function renderAll() {
   renderGeoTab(salesRows);
   renderTrendsTab();
   if(document.getElementById('tab-insights')?.classList.contains('active')) renderInsightsTab();
+  if(document.getElementById('tab-productmix')?.classList.contains('active')) renderProductMixTab();
 }
 
 function renderKPIs(gross, returns, net, qty, salesRows) {
@@ -925,6 +1630,7 @@ function renderBrandTab(salesRows) {
 }
 
 function renderGeoTab(salesRows) {
+  renderStateChart(salesRows);
   const stateTotals = {};
   salesRows.forEach(r=>{ const s=STATES[r[4]]; stateTotals[s]=(stateTotals[s]||0)+r[5]; });
   const sorted = Object.entries(stateTotals).sort((a,b)=>b[1]-a[1]).slice(0,20);
@@ -1249,17 +1955,168 @@ function renderInsightsTab() {
     </div>`).join('');
 }
 
+// ═══════════════════════════════════════════════════════
+// STATE REVENUE CHART
+// ═══════════════════════════════════════════════════════
+function renderStateChart(salesRows) {
+  destroyChart('state-rev');
+  const canvas = document.getElementById('chart-state-rev');
+  if(!canvas) return;
+  const sm = {};
+  salesRows.forEach(r=>{const s=STATES[r[4]]; sm[s]=(sm[s]||0)+r[5];});
+  const top = Object.entries(sm).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]).slice(0,15);
+  if(!top.length){canvas.style.display='none';return;}
+  canvas.style.display='';
+  const zoneColor={North:'#2563eb',South:'#059669',West:'#ec4899',East:'#d97706',Other:'#8b5cf6'};
+  charts['state-rev'] = new Chart(canvas,{
+    type:'bar',
+    data:{
+      labels: top.map(([s])=>s),
+      datasets:[{
+        label:'Revenue',
+        data: top.map(([,v])=>v),
+        backgroundColor: top.map(([s])=>(zoneColor[ZONE_MAP(s)]||'#8b5cf6')+'99'),
+        borderColor: top.map(([s])=>zoneColor[ZONE_MAP(s)]||'#8b5cf6'),
+        borderWidth:1, borderRadius:4,
+      }]
+    },
+    options:{
+      indexAxis:'y',
+      responsive:true,
+      plugins:{
+        legend:{display:false},
+        tooltip:{callbacks:{
+          label:c=>`₹${FMT(c.raw)} · ${ZONE_MAP(top[c.dataIndex][0])} zone`
+        }}
+      },
+      scales:{
+        x:{ticks:{callback:v=>'₹'+FMT(v),color:'#8290a8',font:{size:9}},grid:{color:'rgba(255,255,255,0.05)'}},
+        y:{ticks:{color:'#e4e8f2',font:{size:10}},grid:{display:false}}
+      }
+    }
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+// PRODUCT MIX TAB — SKU / Collection / Brick / Size
+// ═══════════════════════════════════════════════════════
+let selectedDim = 'sku';
+
+function setDim(d, btn) {
+  selectedDim = d;
+  document.querySelectorAll('#dim-pills .pill-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProductMixTab();
+}
+
+function renderProductMixTab() {
+  const dim = selectedDim;
+  const rows  = dim==='sku'?DESC_ROWS:dim==='coll'?COLL_ROWS:dim==='brick'?BRICK_ROWS:SIZE_ROWS;
+  const names = dim==='sku'?DESCS:dim==='coll'?COLLS:dim==='brick'?BRICKS:SIZES;
+  const brand = selectedBrand;
+  // Support multi-FY selection: pick latest for "current", prior for compare
+  const fys = [...selectedFYs].sort();
+  const curFY = fys[fys.length-1];
+  const prFY  = curFY - 1;
+
+  // Aggregate by dim index
+  const cur={}, pr={}, curQ={};
+  rows.forEach(r=>{
+    if(r[5]!==0) return; // sales only (type=0)
+    if(brand!=='ALL'&&BRANDS[r[1]]!==brand) return;
+    const idx=r[2], net=r[3], qty=r[4], fy=r[0];
+    if(fys.includes(fy)){cur[idx]=(cur[idx]||0)+net; curQ[idx]=(curQ[idx]||0)+qty;}
+    if(fy===prFY)       {pr[idx]=(pr[idx]||0)+net;}
+  });
+
+  const items = Object.entries(cur)
+    .map(([idx,v])=>({idx:+idx,name:names[+idx]||'?',cur:v,pr:pr[+idx]||0,qty:curQ[+idx]||0}))
+    .filter(x=>x.cur>0).sort((a,b)=>b.cur-a.cur);
+  const total = items.reduce((a,x)=>a+x.cur,0);
+
+  // Update subtitle
+  const fyLabels={2022:'FY23',2023:'FY24',2024:'FY25',2025:'FY26',2026:'FY27 YTD'};
+  const fyStr = fys.map(f=>fyLabels[f]||f).join(', ');
+  const dimLabel={sku:'Article / SKU',coll:'Collection',brick:'Brick / Category',size:'Size run'};
+  document.getElementById('pm-subtitle').textContent=
+    `${dimLabel[dim]} view · ${fyStr} gross sales · ${items.length} items`+(brand!=='ALL'?` · ${brand} only`:'');
+
+  // Bar chart (top 20)
+  destroyChart('pm-chart');
+  const canvas=document.getElementById('chart-pm');
+  const top20=items.slice(0,20);
+  if(canvas&&top20.length){
+    const palette=['#2563eb','#059669','#d97706','#dc2626','#8b5cf6','#ec4899','#0ea5e9','#16a34a','#ea580c','#7c3aed',
+                   '#0891b2','#65a30d','#ca8a04','#b45309','#4f46e5','#db2777','#0284c7','#15803d','#c2410c','#6d28d9'];
+    charts['pm-chart']=new Chart(canvas,{
+      type:'bar',
+      data:{
+        labels:top20.map(x=>x.name.length>20?x.name.slice(0,20)+'…':x.name),
+        datasets:[{
+          label:'Revenue',
+          data:top20.map(x=>x.cur),
+          backgroundColor:top20.map((_,i)=>palette[i%palette.length]+'cc'),
+          borderColor:top20.map((_,i)=>palette[i%palette.length]),
+          borderWidth:1,borderRadius:4
+        }]
+      },
+      options:{
+        indexAxis:'y',responsive:true,
+        plugins:{
+          legend:{display:false},
+          tooltip:{callbacks:{label:c=>`₹${FMT(c.raw)} · ${(c.raw/total*100).toFixed(1)}% share`}}
+        },
+        scales:{
+          x:{ticks:{callback:v=>'₹'+FMT(v),color:'#8290a8',font:{size:9}},grid:{color:'rgba(255,255,255,0.05)'}},
+          y:{ticks:{color:'#e4e8f2',font:{size:10}},grid:{display:false}}
+        }
+      }
+    });
+  }
+
+  // Table (top 50)
+  const tbody=document.getElementById('pm-table-body');
+  if(tbody){
+    tbody.innerHTML=items.slice(0,50).map((x,i)=>{
+      const share=total>0?x.cur/total*100:0;
+      const yoy=x.pr>0?Math.round((x.cur-x.pr)/x.pr*100):null;
+      const avg=x.qty>0?Math.round(x.cur/x.qty):0;
+      const barW=Math.min(share*5,100);
+      const gc=yoy===null?'var(--td)':yoy>=20?'#059669':yoy>=0?'#16a34a':'#dc2626';
+      return `<tr style="border-bottom:1px solid var(--bd)15">
+        <td style="padding:7px 10px;color:var(--td);text-align:center;font-size:10px">${i+1}</td>
+        <td style="padding:7px 10px;font-weight:600;color:var(--tx)">${x.name}</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--ac)">₹${FMT(x.cur)}</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">₹${FMT(x.pr)}</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:600;color:${gc}">${yoy===null?'—':(yoy>=0?'+':'')+yoy+'%'}</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ts)">${x.qty.toLocaleString('en-IN')}</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--td)">₹${avg.toLocaleString('en-IN')}</td>
+        <td style="padding:7px 14px">
+          <div style="display:flex;align-items:center;gap:5px">
+            <div style="flex:1;height:4px;background:var(--bd);border-radius:2px;min-width:60px">
+              <div style="width:${barW}%;height:4px;background:var(--ac);border-radius:2px"></div>
+            </div>
+            <span style="font-size:9px;color:var(--td);width:30px;text-align:right">${share.toFixed(1)}%</span>
+          </div>
+        </td>
+      </tr>`;
+    }).join('');
+  }
+}
+
 function showTab(name) {
   document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('tab-'+name).classList.add('active');
   event.target.classList.add('active');
   if(name==='insights') renderInsightsTab();
+  else if(name==='productmix') renderProductMixTab();
   else renderAll();
 }
 
 // Init
 renderAll();
+renderProductMixTab();
 if(document.getElementById('tab-insights').classList.contains('active')) renderInsightsTab();
 </script>
 
